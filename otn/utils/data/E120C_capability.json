@@ -1,0 +1,23 @@
+{
+    "voa_id_list": [1, 2],
+    "voa_attenuation": [0, 25],
+
+    "olp_id_list": [1],
+    "alarm_hysteresis": [1, 5],
+    "switch_hysteresis": [1, 5],
+    "primary_switch_threshold": [-50, 30],
+    "primary_in_alarm_threshold": [-50, 30],
+    "primary_out_alarm_threshold": [-50, 30],
+    "secondary_switch_threshold": [-50, 30],
+    "secondary_in_alarm_threshold": [-50, 30],
+    "secondary_out_alarm_threshold": [-50, 30],
+    "common_in_alarm_threshold": [-50, 30],
+    "common_out_alarm_threshold": [-50, 30],
+    "wait_to_restore_time": [300000, 7200000],
+    "relative_diff_threshold_offset": [-10, 10],
+    "hold_off_time": [0, 50],
+    "relative_diff_threshold": [3, 10],
+
+    "port_id_list": ["C1", "L1", "L2"],
+    "client_port_id_list": ["C1"]
+}

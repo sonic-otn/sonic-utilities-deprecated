@@ -1,0 +1,17 @@
+{
+    "voa_id_list": [1, 3],
+    "voa_attenuation": [0, 25],
+
+    "edfa_id_list": [1, 2],
+    "input_los_threshold": [-50, 30],
+    "input_low_threshold": [-50, 30],
+    "output_low_threshold": [-50, 30],
+    "gain_low_threshold": [1, 10],
+    "gain_low_hysteresis": [1, 5],
+    "los_ase_delay": [0, 100],
+
+    "osc_id_list": [1],
+    "input_high_threshold": [-50, 30],
+    "port_id_list": ["MD58", "MD53", "MD48", "MD43", "MD38", "MD33", "EXT", "L1"],
+    "client_port_id_list": ["MD58", "MD53", "MD48", "MD43", "MD38", "MD33", "EXT"]
+}

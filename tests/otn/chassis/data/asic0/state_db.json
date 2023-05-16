@@ -1,0 +1,649 @@
+{
+    "INTERFACE|INTERFACE-1-1-C3": {
+        "transceiver": "TRANSCEIVER-1-1-C3",
+        "hardware-port": "PORT-1-1-C3",
+        "present": "PRESENT",
+        "name": "INTERFACE-1-1-C3"
+    },
+    "ASSIGNMENT|CH118|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-18 [ODUCN-2]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "118"
+    },
+    "PORT|PORT-1-1-C1": {
+        "led-mode": "AUTO",
+        "led-flash-interval": "300",
+        "oper-status": "INACTIVE",
+        "led-color": "RED",
+        "subcomponents": "TRANSCEIVER-1-1-C1"
+    },
+    "LOGICAL_CHANNEL|CH103": {
+        "index": "103",
+        "link-state": "DOWN",
+        "test-signal-pattern": "PRBS_PATTERN_TYPE_NONE",
+        "logical-channel-type": "PROT_ETHERNET",
+        "description": "GE-1-1-C3",
+        "rate-class": "TRIB_RATE_200G",
+        "loopback-mode": "NONE",
+        "link-up-delay-active-threshold": "200",
+        "trib-protocol": "PROT_200GE",
+        "link-down-delay-hold-off": "200",
+        "transceiver": "TRANSCEIVER-1-1-C3",
+        "test-signal": "false",
+        "admin-state": "MAINT",
+        "link-up-delay-mode": "false",
+        "link-up-delay-hold-off": "2",
+        "present": "PRESENT",
+        "link-down-delay-mode": "false"
+    },
+    "ASSIGNMENT|CH115|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-15 [OTU-1]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "115"
+    },
+    "CURALARM|PORT-1-1-L1#FLEXO_RX_ODU_AIS": {
+        "time-created": "1680168802834661888",
+        "resource": "PORT-1-1-L1",
+        "severity": "NOT_ALARMED",
+        "text": "RX_ODU_AIS",
+        "type-id": "FLEXO_RX_ODU_AIS",
+        "id": "PORT-1-1-L1#FLEXO_RX_ODU_AIS"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C2|CH-2": {
+        "present": "NOT_PRESENT"
+    },
+    "ASSIGNMENT|CH104|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-4 [GE-4]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "104"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C4|CH-3": {
+        "present": "NOT_PRESENT"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C3|CH-3": {
+        "present": "PRESENT"
+    },
+    "LLDP|CH103": {
+        "index": "103",
+        "neighbor-last-update": "0",
+        "enabled": "true",
+        "snooping": "true"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C4|CH-1": {
+        "present": "NOT_PRESENT"
+    },
+    "LOGICAL_CHANNEL|CH101": {
+        "index": "101",
+        "link-state": "DOWN",
+        "test-signal-pattern": "PRBS_PATTERN_TYPE_NONE",
+        "logical-channel-type": "PROT_ETHERNET",
+        "description": "GE-1-1-C1",
+        "rate-class": "TRIB_RATE_200G",
+        "loopback-mode": "NONE",
+        "link-up-delay-active-threshold": "80",
+        "trib-protocol": "PROT_200GE",
+        "link-down-delay-hold-off": "100",
+        "transceiver": "TRANSCEIVER-1-1-C1",
+        "test-signal": "false",
+        "admin-state": "MAINT",
+        "link-up-delay-mode": "false",
+        "link-up-delay-hold-off": "200",
+        "present": "PRESENT",
+        "link-down-delay-mode": "false"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C1|CH-3": {
+        "present": "PRESENT"
+    },
+    "CURALARM|PORT-1-1-C1#XCVR_MISMATCH": {
+        "time-created": "1680080672933775104",
+        "resource": "PORT-1-1-C1",
+        "severity": "NOT_ALARMED",
+        "text": "#Real:QSFP28-CWDM4 Cfg:QSFP56-FR#XCVRMismatch",
+        "type-id": "XCVR_MISMATCH",
+        "id": "PORT-1-1-C1#XCVR_MISMATCH"
+    },
+    "LINECARD|LINECARD-1-1": {
+        "script-version": "0.0.1.9",
+        "mfg-name": "Accelink",
+        "power-admin-state": "POWER_ENABLED",
+        "mfg-date": "2021-07-01",
+        "cpld-version": "0.0.0.25",
+        "led-mode": "AUTO",
+        "hostname": "anon",
+        "subcomponents": "PORT-1-1-C1,PORT-1-1-C2,PORT-1-1-C3,PORT-1-1-C4,PORT-1-1-L1,PORT-1-1-L2",
+        "removable": "true",
+        "linecard-type": "P230C",
+        "oper-status": "ACTIVE",
+        "empty": "false",
+        "parent": "CHASSIS-1",
+        "led-color": "RED",
+        "software-version": "Sonic-P230C-B019",
+        "fpga-version": "0.0.2.36",
+        "admin-state": "ENABLED",
+        "slot-status": "Ready",
+        "slot-id": "1",
+        "serial-no": "AC0405157001",
+        "part-no": "P230CAC000",
+        "hardware-version": "1.0",
+        "led-flash-interval": "300",
+        "board-mode": "LA_400G_CA_200GE"
+    },
+    "CURALARM|PORT-1-1-C3#TX_FAIL": {
+        "time-created": "1680080671999343104",
+        "resource": "PORT-1-1-C3",
+        "severity": "NOT_ALARMED",
+        "text": "#Tx Bias Low Alarm#TX-FAIL",
+        "type-id": "TX_FAIL",
+        "id": "PORT-1-1-C3#TX_FAIL"
+    },
+    "ASSIGNMENT|CH117|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-17 [ODUCN-1]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "117"
+    },
+    "OTN|CH117": {
+        "index": "117",
+        "delay-measurement-enabled": "true",
+        "rdi-msg": "",
+        "present": "PRESENT"
+    },
+    "CURALARM|PORT-1-1-C4#XCVR_MISSING": {
+        "time-created": "1679992519964858880",
+        "resource": "PORT-1-1-C4",
+        "severity": "NOT_ALARMED",
+        "text": "TRANSCEIVER MISSING",
+        "type-id": "XCVR_MISSING",
+        "id": "PORT-1-1-C4#XCVR_MISSING"
+    },
+    "ASSIGNMENT|CH102|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-2 [GE-2]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "102"
+    },
+    "CURALARM|PORT-1-1-L1#FLEXO_RX_ODU_LCK": {
+        "time-created": "1680168613650240000",
+        "resource": "PORT-1-1-L1",
+        "severity": "NOT_ALARMED",
+        "text": "RX_ODU_LCK",
+        "type-id": "FLEXO_RX_ODU_LCK",
+        "id": "PORT-1-1-L1#FLEXO_RX_ODU_LCK"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C1|CH-1": {
+        "tx-laser": "true",
+        "output-frequency": "230438124"
+    },
+    "PORT|PORT-1-1-C3": {
+        "led-mode": "AUTO",
+        "led-flash-interval": "300",
+        "oper-status": "INACTIVE",
+        "led-color": "RED",
+        "subcomponents": "TRANSCEIVER-1-1-C3"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-L1": {
+        "oui": "447c7f",
+        "form-factor": "CFP2",
+        "power-class": "ABOVE_15W",
+        "vendor-rev": "Innolight",
+        "rx-total-power-high-alarm-threshold": "8.16",
+        "mfg-name": "Innolight",
+        "upgrade-state": "IDLE",
+        "vendor-part": "CT-CTS400SMRTAAL",
+        "mfg-date": "2022-03-03",
+        "connector-type": "LC_CONNECTOR",
+        "copper-cable-len": "0.0",
+        "firmware-version": "0.0.2.4",
+        "och": "OCH-1-1-L1",
+        "otn": "CH115",
+        "host-bit-rate": "0.0",
+        "fault-condition": "true",
+        "tx-bais-low-warn-threshold": "0.0",
+        "newwork-bit-rate": "480.0",
+        "oa-pump-current-low-alarm-threshold": "3.33",
+        "oa-pump-current-high-warn-threshold": "20.58",
+        "lot-code": "  ",
+        "vcc-high-alarm-threshold": "3465.0",
+        "present": "PRESENT",
+        "removable": "true",
+        "oper-status": "INACTIVE",
+        "frequency-range": "191300000MHz~196100000MHz",
+        "sm-fiber-len": "80.0",
+        "vendor": "Innolight",
+        "clei-code": "",
+        "parent": "PORT-1-1-L1",
+        "mm-fiber-len": "0.0",
+        "enabled": "true",
+        "max-oper-temp": "70.0",
+        "tx-bais-high-alarm-threshold": "0.0",
+        "vcc-low-alarm-threshold": "3200.0",
+        "tx-bais-high-warn-threshold": "0.0",
+        "logical-channel": "CH115",
+        "vendor-expect": "CFP2_DCO_VEND_INNOLIGHT",
+        "operate-time": "3218",
+        "oa-pump-current-low-warn-threshold": "3.49",
+        "max-rx-power": "10000.0",
+        "rx-total-power-low-alarm-threshold": "-23.01",
+        "max-tx-power": "100.0",
+        "rx-total-power-low-warn-threshold": "-22.01",
+        "min-oper-temp": "0.0",
+        "serial-no": "INMAIV160001",
+        "part-no": "CT-CTS400SMRTAAL",
+        "hardware-version": "a.1",
+        "min-wavelength": "1528775.0",
+        "tx-bais-low-alarm-threshold": "0.0",
+        "date-code": "2022-03-03T00:00:00Z+08:00",
+        "rx-total-power-high-warn-threshold": "6.0",
+        "vcc-low-warn-threshold": "3230.0",
+        "oa-pump-current-high-alarm-threshold": "21.67",
+        "vcc-high-warn-threshold": "3399.0",
+        "max-wavelength": "1567125.0",
+        "laser-age": "0"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C3": {
+        "oui": "000000",
+        "form-factor": "QSFP28",
+        "vendor-rev": "03",
+        "rx-total-power-high-alarm-threshold": "3.5",
+        "extend-module-code": "SDR",
+        "mfg-name": "Alibaba",
+        "interface": "INTERFACE-1-1-C3",
+        "data-status": "READY",
+        "vendor-part": "AB-QT0613C4nL",
+        "mfg-date": "2017-12-22",
+        "connector-type": "LC_CONNECTOR",
+        "wavelength": "1301.0",
+        "parent": "PORT-1-1-C3",
+        "fec-mode": "FEC_ENABLED",
+        "fault-condition": "true",
+        "ethernet-pmd": "ETH_100GBASE_CWDM4",
+        "vcc-high-alarm-threshold": "3630.0",
+        "wavelength-tolerance": "6.5",
+        "removable": "true",
+        "encode": "256B_257B",
+        "rn": "03",
+        "oper-status": "INACTIVE",
+        "num-of-lane": "4",
+        "cmis-revision": "SFF-8636 Rev2.5",
+        "vendor": "Alibaba",
+        "otn": "CH119",
+        "tx-bais-high-alarm-threshold": "65.0",
+        "power-mode": "NORMAL",
+        "vcc-low-alarm-threshold": "2970.0",
+        "logical-channel": "CH103,CH119",
+        "tx-power-high-alarm-threshold": "3.5",
+        "bitrate": "25.5",
+        "present": "PRESENT",
+        "physical-channel": "TRANSCEIVER-1-1-C3|CH-1,TRANSCEIVER-1-1-C3|CH-2,TRANSCEIVER-1-1-C3|CH-3,TRANSCEIVER-1-1-C3|CH-4",
+        "tx-power-low-alarm-threshold": "-8.5",
+        "serial-no": "ININHBF8020438",
+        "part-no": "AB-QT0613C4nL",
+        "hardware-version": "03",
+        "enabled": "false",
+        "tx-bais-low-alarm-threshold": "15.0",
+        "date-code": "2017-12-22T00:00:00Z+08:00",
+        "ethernet-pmd-preconf": "ETH_AUTO",
+        "rx-total-power-low-alarm-threshold": "-13.5",
+        "ethernet": "CH103",
+        "extend-bit-rate": "25.75",
+        "identifier": "qsfp28"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C1": {
+        "oui": "001cad",
+        "form-factor": "QSFP28",
+        "vendor-rev": "29",
+        "rx-total-power-high-alarm-threshold": "3.5",
+        "extend-module-code": "SDR",
+        "mfg-name": "Alibaba",
+        "interface": "INTERFACE-1-1-C1",
+        "data-status": "READY",
+        "vendor-part": "AB-QT0613C4nL",
+        "mfg-date": "2017-10-18",
+        "connector-type": "LC_CONNECTOR",
+        "wavelength": "1301.0",
+        "parent": "PORT-1-1-C1",
+        "fec-mode": "FEC_ENABLED",
+        "fault-condition": "true",
+        "ethernet-pmd": "ETH_100GBASE_CWDM4",
+        "vcc-high-alarm-threshold": "3630.0",
+        "wavelength-tolerance": "6.5",
+        "removable": "true",
+        "encode": "256B_257B",
+        "rn": "29",
+        "oper-status": "INACTIVE",
+        "num-of-lane": "4",
+        "cmis-revision": "SFF-8636 Rev2.5",
+        "vendor": "Alibaba",
+        "otn": "CH117",
+        "tx-bais-high-alarm-threshold": "75.0",
+        "power-mode": "NORMAL",
+        "vcc-low-alarm-threshold": "2970.0",
+        "logical-channel": "CH101,CH117",
+        "tx-power-high-alarm-threshold": "3.5",
+        "bitrate": "25.5",
+        "present": "PRESENT",
+        "physical-channel": "TRANSCEIVER-1-1-C1|CH-1,TRANSCEIVER-1-1-C1|CH-2,TRANSCEIVER-1-1-C1|CH-3,TRANSCEIVER-1-1-C1|CH-4",
+        "tx-power-low-alarm-threshold": "-8.5",
+        "serial-no": "WTRD1742100089",
+        "part-no": "AB-QT0613C4nL",
+        "hardware-version": "29",
+        "enabled": "false",
+        "tx-bais-low-alarm-threshold": "20.0",
+        "date-code": "2017-10-18T00:00:00Z+08:00",
+        "ethernet-pmd-preconf": "ETH_AUTO",
+        "rx-total-power-low-alarm-threshold": "-13.51",
+        "ethernet": "CH101",
+        "extend-bit-rate": "25.75",
+        "identifier": "qsfp28"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C1|CH-4": {
+        "tx-laser": "true",
+        "output-frequency": "230438124"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C1|CH-4": {
+        "present": "PRESENT"
+    },
+    "PORT|PORT-1-1-L1": {
+        "led-mode": "AUTO",
+        "rx-cd-range": "-300,6300",
+        "led-color": "RED",
+        "subcomponents": "TRANSCEIVER-1-1-L1",
+        "led-flash-interval": "300",
+        "oper-status": "INACTIVE"
+    },
+    "PORT|PORT-1-1-L2": {
+        "led-mode": "AUTO",
+        "rx-cd-range": "0,0",
+        "led-color": "GREEN",
+        "subcomponents": "TRANSCEIVER-1-1-L2",
+        "led-flash-interval": "300",
+        "oper-status": "INACTIVE"
+    },
+    "CURALARM|PORT-1-1-L2#XCVR_MISSING": {
+        "time-created": "1680080671707651072",
+        "resource": "PORT-1-1-L2",
+        "severity": "NOT_ALARMED",
+        "text": "TRANSCEIVER MISSING",
+        "type-id": "XCVR_MISSING",
+        "id": "PORT-1-1-L2#XCVR_MISSING"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C1|CH-2": {
+        "present": "PRESENT"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C3|CH-2": {
+        "tx-laser": "true",
+        "output-frequency": "230438124"
+    },
+    "LLDP|CH104": {
+        "index": "104",
+        "neighbor-last-update": "0",
+        "enabled": "true",
+        "snooping": "true"
+    },
+    "ASSIGNMENT|CH103|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-3 [GE-3]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "103"
+    },
+    "LOGICAL_CHANNEL|CH119": {
+        "index": "119",
+        "link-up-delay-mode": "false",
+        "logical-channel-type": "PROT_ETHERNET",
+        "description": "ODUCN-1-1-C3",
+        "rate-class": "TRIB_RATE_200G",
+        "link-up-delay-active-threshold": "200",
+        "trib-protocol": "PROT_200GE",
+        "link-down-delay-hold-off": "200",
+        "transceiver": "TRANSCEIVER-1-1-C3",
+        "test-signal": "false",
+        "link-up-delay-hold-off": "2",
+        "present": "PRESENT",
+        "link-down-delay-mode": "false"
+    },
+    "LOGICAL_CHANNEL|CH115": {
+        "index": "115",
+        "logical-channel-type": "PROT_OTN",
+        "description": "OTUCN-1-1-L1",
+        "rate-class": "TRIB_RATE_400G",
+        "trib-protocol": "PROT_OTUCN",
+        "rx-test-signal-pattern": "PRBS_PATTERN_TYPE_NONE",
+        "transceiver": "TRANSCEIVER-1-1-L1",
+        "tx-test-signal-pattern": "PRBS_PATTERN_TYPE_NONE",
+        "admin-state": "MAINT",
+        "loopback-mode": "NONE",
+        "present": "PRESENT"
+    },
+    "CURALARM|PORT-1-1-C1#XCVR_UNSUPPORTED": {
+        "time-created": "1680080672933764096",
+        "resource": "PORT-1-1-C1",
+        "severity": "NOT_ALARMED",
+        "text": "#Real:QSFP28-CWDM4#XCVRUnsupported",
+        "type-id": "XCVR_UNSUPPORTED",
+        "id": "PORT-1-1-C1#XCVR_UNSUPPORTED"
+    },
+    "ASSIGNMENT|CH120|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-20 [ODUCN-4]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "120"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C2|CH-3": {
+        "present": "NOT_PRESENT"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C3|CH-4": {
+        "present": "PRESENT"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C2|CH-1": {
+        "present": "NOT_PRESENT"
+    },
+    "LOGICAL_CHANNEL|CH117": {
+        "index": "117",
+        "link-up-delay-mode": "false",
+        "logical-channel-type": "PROT_ETHERNET",
+        "description": "ODUCN-1-1-C1",
+        "rate-class": "TRIB_RATE_200G",
+        "link-up-delay-active-threshold": "80",
+        "trib-protocol": "PROT_200GE",
+        "link-down-delay-hold-off": "100",
+        "transceiver": "TRANSCEIVER-1-1-C1",
+        "test-signal": "false",
+        "link-up-delay-hold-off": "200",
+        "present": "PRESENT",
+        "link-down-delay-mode": "false"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C1|CH-3": {
+        "tx-laser": "true",
+        "output-frequency": "230438124"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C3|CH-2": {
+        "present": "PRESENT"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C1|CH-2": {
+        "tx-laser": "true",
+        "output-frequency": "230438124"
+    },
+    "ASSIGNMENT|CH116|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-16 [OTU-2]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "116"
+    },
+    "LLDP|CH102": {
+        "index": "102",
+        "neighbor-last-update": "0",
+        "enabled": "true",
+        "snooping": "true"
+    },
+    "ASSIGNMENT|CH101|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-1 [GE-1]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "101"
+    },
+    "OTN|CH119": {
+        "index": "119",
+        "delay-measurement-enabled": "false",
+        "rdi-msg": "",
+        "present": "PRESENT"
+    },
+    "ASSIGNMENT|CH119|ASS1": {
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "description": "ASSIGNMENT-1-1-19 [ODUCN-3]",
+        "tributary-slot-index": "1",
+        "mapping": "GMP",
+        "allocation": "400.0",
+        "logical-channel": "119"
+    },
+    "PORT|PORT-1-1-C4": {
+        "led-mode": "AUTO",
+        "led-flash-interval": "300",
+        "oper-status": "INACTIVE",
+        "led-color": "GREEN",
+        "subcomponents": "TRANSCEIVER-1-1-C4"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C4|CH-4": {
+        "present": "NOT_PRESENT"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C3|CH-1": {
+        "tx-laser": "true",
+        "output-frequency": "230438124"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C2|CH-4": {
+        "present": "NOT_PRESENT"
+    },
+    "OCH|OCH-1-1-L1": {
+        "oper-status": "INACTIVE",
+        "frequency": "193350000",
+        "operational-mode": "400G::DP-16QAM::FEC-27::69.435::BICHM[0]",
+        "target-output-power": "-13.0",
+        "present": "PRESENT"
+    },
+    "INTERFACE|INTERFACE-1-1-C1": {
+        "transceiver": "TRANSCEIVER-1-1-C1",
+        "hardware-port": "PORT-1-1-C1",
+        "present": "PRESENT",
+        "name": "INTERFACE-1-1-C1"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C4|CH-2": {
+        "present": "NOT_PRESENT"
+    },
+    "CURALARM|PORT-1-1-C3#XCVR_MISMATCH": {
+        "time-created": "1680080671876632064",
+        "resource": "PORT-1-1-C3",
+        "severity": "NOT_ALARMED",
+        "text": "#Real:QSFP28-CWDM4 Cfg:QSFP56-FR#XCVRMismatch",
+        "type-id": "XCVR_MISMATCH",
+        "id": "PORT-1-1-C3#XCVR_MISMATCH"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C1|CH-1": {
+        "present": "PRESENT"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C3|CH-3": {
+        "tx-laser": "true",
+        "output-frequency": "230438124"
+    },
+    "LLDP|CH101": {
+        "index": "101",
+        "neighbor-last-update": "0",
+        "enabled": "true",
+        "snooping": "true"
+    },
+    "CURALARM|PORT-1-1-C3#XCVR_UNSUPPORTED": {
+        "time-created": "1680080671876622080",
+        "resource": "PORT-1-1-C3",
+        "severity": "NOT_ALARMED",
+        "text": "#Real:QSFP28-CWDM4#XCVRUnsupported",
+        "type-id": "XCVR_UNSUPPORTED",
+        "id": "PORT-1-1-C3#XCVR_UNSUPPORTED"
+    },
+    "ETHERNET|CH101": {
+        "index": "101",
+        "client-als": "LASER_SHUTDOWN",
+        "als-delay": "1000",
+        "client-rx-als-delay": "2000",
+        "client-rx-als": "ETHERNET",
+        "maintenance": "NONE",
+        "present": "PRESENT"
+    },
+    "ETHERNET|CH103": {
+        "index": "103",
+        "client-als": "LASER_SHUTDOWN",
+        "als-delay": "2000",
+        "client-rx-als-delay": "2000",
+        "client-rx-als": "ETHERNET",
+        "maintenance": "NONE",
+        "present": "PRESENT"
+    },
+    "CURALARM|PORT-1-1-C1#TX_FAIL": {
+        "time-created": "1680168786607213056",
+        "resource": "PORT-1-1-C1",
+        "severity": "NOT_ALARMED",
+        "text": "#Tx CDR LOL#TX-FAIL",
+        "type-id": "TX_FAIL",
+        "id": "PORT-1-1-C1#TX_FAIL"
+    },
+    "OTN|CH115": {
+        "index": "115",
+        "tti-msg-recv": "TBC02-E-BA-H002:1-L1",
+        "tti-msg-transmit": "anon:1-L1",
+        "tti-msg-expected": "",
+        "rdi-msg": "",
+        "maintenance": "NONE",
+        "present": "PRESENT",
+        "tti-msg-auto": "true"
+    },
+    "CURALARM|PORT-1-1-C2#XCVR_MISSING": {
+        "time-created": "1679992519964844032",
+        "resource": "PORT-1-1-C2",
+        "severity": "NOT_ALARMED",
+        "text": "TRANSCEIVER MISSING",
+        "type-id": "XCVR_MISSING",
+        "id": "PORT-1-1-C2#XCVR_MISSING"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C3|CH-1": {
+        "present": "PRESENT"
+    },
+    "PORT|PORT-1-1-C2": {
+        "led-mode": "AUTO",
+        "led-flash-interval": "300",
+        "oper-status": "INACTIVE",
+        "led-color": "GREEN",
+        "subcomponents": "TRANSCEIVER-1-1-C2"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C3|CH-4": {
+        "tx-laser": "true",
+        "output-frequency": "230438124"
+    }
+}

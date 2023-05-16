@@ -1,0 +1,218 @@
+{
+    "LED|PSU-1-6|LED1": {
+        "led-status": "GREEN",
+        "led-function": "GREEN:Normal RED:Critical Alarm YELLOW:Major or Minor Alarm",
+        "name": "LED1"
+    },
+    "LED|PSU-1-5|LED1": {
+        "led-status": "GREEN",
+        "led-function": "GREEN:Normal RED:Critical Alarm YELLOW:Major or Minor Alarm",
+        "name": "LED1"
+    },
+    "NTP_SERVER|10.10.10.10": {
+        "root-delay": "0",
+        "stratum": "0",
+        "root-dispersion": "0",
+        "poll-interval": "0",
+        "offset": "0"
+    },
+    "CU|CU-1": {
+        "parent": "CHASSIS-1",
+        "serial-no": "2201350423",
+        "part-no": "X86AC001",
+        "hardware-version": "V101",
+        "software-version": "N/A",
+        "mfg-name": "alibaba",
+        "mfg-date": "2021-01-25",
+        "removable": "true",
+        "oper-status": "ACTIVE",
+        "empty": "false"
+    },
+    "FAN|FAN-1-8": {
+        "slot-status": "Ready",
+        "parent": "FAN-1-8",
+        "serial-no": "AC042315801A",
+        "speed-rate": "1",
+        "hardware-version": "2.0",
+        "mfg-name": "alibaba",
+        "mfg-date": "2020-11-16",
+        "removable": "true",
+        "oper-status": "ACTIVE",
+        "part-no": "FANAC000",
+        "empty": "false"
+    },
+    "FAN|FAN-1-9": {
+        "slot-status": "Ready",
+        "parent": "FAN-1-9",
+        "serial-no": "AC042315801C",
+        "speed-rate": "1",
+        "hardware-version": "2.0",
+        "mfg-name": "alibaba",
+        "mfg-date": "2020-11-16",
+        "removable": "true",
+        "oper-status": "ACTIVE",
+        "part-no": "FANAC000",
+        "empty": "false"
+    },
+    "FAN|FAN-1-7": {
+        "slot-status": "Ready",
+        "parent": "FAN-1-7",
+        "serial-no": "AC042315801B",
+        "speed-rate": "1",
+        "hardware-version": "2.0",
+        "mfg-name": "alibaba",
+        "mfg-date": "2020-11-16",
+        "removable": "true",
+        "oper-status": "ACTIVE",
+        "part-no": "FANAC000",
+        "empty": "false"
+    },
+    "LED|CU-1|LED1": {
+        "led-status": "OFF",
+        "led-function": "GREEN:Normal RED:Critical Alarm YELLOW:Major or Minor Alarm",
+        "name": "LED1"
+    },
+    "PSU|PSU-1-5": {
+        "slot-status": "Mismatch",
+        "hardware-version": "NA",
+        "capacity": "1300.0",
+        "pin": "0.0",
+        "parent": "CHASSIS-1",
+        "ambient-temp": "21.0",
+        "pout": "0.0",
+        "serial-no": "2K120053149",
+        "part-no": "CRPS1300D",
+        "secondary-temp": "27.0",
+        "enabled": "true",
+        "mfg-name": "alibaba",
+        "mfg-date": "2020-08-30",
+        "removable": "true",
+        "fan-speed": "0.0",
+        "model-name": "Great Wall   ",
+        "oper-status": "INACTIVE",
+        "primary-temp": "24.0",
+        "empty": "false",
+        "location": "V0310"
+    },
+    "NTP_SERVER|10.97.197.48": {
+        "stratum": "3",
+        "address": "10.97.197.48",
+        "root-dispersion": "38",
+        "root-delay": "33",
+        "association-type": "SERVER",
+        "version": "4",
+        "offset": "0",
+        "port": "123",
+        "poll-interval": "64"
+    },
+    "FAN|FAN-1-11": {
+        "slot-status": "Ready",
+        "parent": "FAN-1-11",
+        "serial-no": "AC042315801E",
+        "speed-rate": "1",
+        "hardware-version": "2.0",
+        "mfg-name": "alibaba",
+        "mfg-date": "2020-11-16",
+        "removable": "true",
+        "oper-status": "ACTIVE",
+        "part-no": "FANAC000",
+        "empty": "false"
+    },
+    "LED|FAN-1-10|LED1": {
+        "led-status": "GREEN",
+        "led-function": "GREEN:Normal RED:Critical Alarm YELLOW:Major or Minor Alarm",
+        "name": "LED1"
+    },
+    "CURALARM|PSU-1-5#PSU_MISMATCH": {
+        "time-created": "1680072022143542784",
+        "resource": "PSU-1-5",
+        "severity": "CRITICAL",
+        "text": "PSU CARD MISMATCH",
+        "type-id": "PSU_MISMATCH",
+        "id": "PSU-1-5#PSU_MISMATCH",
+        "service-affect": "False"
+    },
+    "LED|FAN-1-11|LED1": {
+        "led-status": "GREEN",
+        "led-function": "GREEN:Normal RED:Critical Alarm YELLOW:Major or Minor Alarm",
+        "name": "LED1"
+    },
+    "PSU|PSU-1-6": {
+        "slot-status": "Mismatch",
+        "hardware-version": "NA",
+        "capacity": "1300.0",
+        "pin": "138.0",
+        "parent": "CHASSIS-1",
+        "ambient-temp": "32.0",
+        "pout": "117.5",
+        "serial-no": "2K120053148",
+        "part-no": "CRPS1300D",
+        "secondary-temp": "48.0",
+        "enabled": "true",
+        "mfg-name": "alibaba",
+        "mfg-date": "2020-08-30",
+        "removable": "true",
+        "fan-speed": "7976.0",
+        "model-name": "Great Wall   ",
+        "oper-status": "ACTIVE",
+        "primary-temp": "55.0",
+        "empty": "false",
+        "location": "V0310"
+    },
+    "CHASSIS|CHASSIS-1": {
+        "parent": "CHASSIS-1",
+        "serial-no": "AC0408163008",
+        "part-no": "1141TAC000",
+        "hardware-version": "1.11",
+        "software-version": "V100R001C002B097",
+        "subcomponents": "CU-1,LINECARD-1-1,LINECARD-1-2,LINECARD-1-3,LINECARD-1-4,FAN-1-7,FAN-1-8,FAN-1-9,FAN-1-10,FAN-1-11,PSU-1-5,PSU-1-6",
+        "mfg-name": "alibaba",
+        "mfg-date": "2022-08-15",
+        "removable": "true",
+        "oper-status": "ACTIVE",
+        "empty": "false"
+    },
+    "LED|FAN-1-9|LED1": {
+        "led-status": "GREEN",
+        "led-function": "GREEN:Normal RED:Critical Alarm YELLOW:Major or Minor Alarm",
+        "name": "LED1"
+    },
+    "LED|FAN-1-8|LED1": {
+        "led-status": "GREEN",
+        "led-function": "GREEN:Normal RED:Critical Alarm YELLOW:Major or Minor Alarm",
+        "name": "LED1"
+    },
+    "LED|FAN-1-7|LED1": {
+        "led-status": "GREEN",
+        "led-function": "GREEN:Normal RED:Critical Alarm YELLOW:Major or Minor Alarm",
+        "name": "LED1"
+    },
+    "FAN|FAN-1-10": {
+        "slot-status": "Ready",
+        "parent": "FAN-1-10",
+        "serial-no": "AC042315801D",
+        "speed-rate": "1",
+        "hardware-version": "2.0",
+        "mfg-name": "alibaba",
+        "mfg-date": "2020-11-16",
+        "removable": "true",
+        "oper-status": "ACTIVE",
+        "part-no": "FANAC000",
+        "empty": "false"
+    },
+    "CURALARM|PSU-1-6#PSU_MISMATCH": {
+        "time-created": "1680072022202203904",
+        "resource": "PSU-1-6",
+        "severity": "CRITICAL",
+        "text": "PSU CARD MISMATCH",
+        "type-id": "PSU_MISMATCH",
+        "id": "PSU-1-6#PSU_MISMATCH",
+        "service-affect": "False"
+    },
+    "NTP|global": {
+        "ntp-source-address": "11.159.183.248",
+        "ntp-server-selected": "10.97.197.48",
+        "enabled": "true",
+        "ntp-status": "SYNCHRONIZED"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "CHASSIS|CHASSIS-1": {
+        "parent": "CHASSIS-1",
+        "serial-no": "AC040815C001",
+        "part-no": "1141TAC000",
+        "hardware-version": "1.11",
+        "software-version": "V100R001C002B093",
+        "subcomponents": "CU-1,LINECARD-1-1,LINECARD-1-2,LINECARD-1-3,LINECARD-1-4,FAN-1-7,FAN-1-8,FAN-1-9,FAN-1-10,FAN-1-11,PSU-1-5,PSU-1-6",
+        "mfg-name": "alibaba",
+        "mfg-date": "2016-01-01",
+        "removable": "true",
+        "oper-status": "ACTIVE",
+        "empty": "false"
+    }
+}

@@ -1,0 +1,609 @@
+{
+    "INTERFACE|INTERFACE-1-1-C3": {
+        "index": "3",
+        "name": "INTERFACE-1-1-C3",
+        "interface-id": "3",
+        "interface-type": "CLIENT",
+        "transceiver": "TRANSCEIVER-1-1-C3",
+        "hardware-port": "PORT-1-1-C3"
+    },
+    "ASSIGNMENT|CH118|ASS1": {
+        "logical-channel": "118",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "118"
+    },
+    "MODE|2": {
+        "mode-id": "2",
+        "description": "600G::DP-64QAM::FEC-15::63.054::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|29": {
+        "mode-id": "29",
+        "description": "200G::DP-QPSK::FEC-15::63.054::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "PORT|PORT-1-1-C1": {
+        "alias": "PORT-1-1-C1",
+        "port-id": "1",
+        "subcomponents": "TRANSCEIVER-1-1-C1",
+        "index": "3",
+        "port-type": "CLIENT"
+    },
+    "OTN|CH118": {
+        "index": "118",
+        "channel-id": "118"
+    },
+    "LOGICAL_CHANNEL|CH103": {
+        "alias": "CH103",
+        "channel-id": "103",
+        "index": "103",
+        "description": "GE-1-1-C3",
+        "transceiver": "TRANSCEIVER-1-1-C3"
+    },
+    "ASSIGNMENT|CH115|ASS1": {
+        "logical-channel": "115",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "115"
+    },
+    "INTERFACE|INTERFACE-1-1-C4": {
+        "index": "4",
+        "name": "INTERFACE-1-1-C4",
+        "interface-id": "4",
+        "interface-type": "CLIENT",
+        "transceiver": "TRANSCEIVER-1-1-C4",
+        "hardware-port": "PORT-1-1-C4"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C2|CH-2": {
+        "index": "6",
+        "port-id": "2",
+        "lane-id": "2",
+        "port-type": "CLIENT"
+    },
+    "LOGICAL_CHANNEL|CH120": {
+        "alias": "CH120",
+        "channel-id": "120",
+        "index": "120",
+        "description": "ODUCN-1-1-C4",
+        "transceiver": "TRANSCEIVER-1-1-C4"
+    },
+    "ASSIGNMENT|CH104|ASS1": {
+        "logical-channel": "104",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "104"
+    },
+    "MODE|13": {
+        "mode-id": "13",
+        "description": "400G::DP-16QAM::FEC-15::63.054::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|19": {
+        "mode-id": "19",
+        "description": "300G::DP-16QAM::FEC-15::47.291::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|28": {
+        "mode-id": "28",
+        "description": "200G::DP-QPSK::FEC-27::69.435::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C4|CH-3": {
+        "index": "15",
+        "port-id": "4",
+        "lane-id": "3",
+        "port-type": "CLIENT"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C3|CH-3": {
+        "index": "11",
+        "port-id": "3",
+        "lane-id": "3",
+        "port-type": "CLIENT"
+    },
+    "MODE|6": {
+        "mode-id": "6",
+        "description": "500G::DP-32QAM::FEC-27::69.435::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "CONFIG_DB_INITIALIZED": {},
+    "LLDP|CH103": {
+        "index": "103",
+        "channel-id": "103"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C4|CH-1": {
+        "index": "13",
+        "port-id": "4",
+        "lane-id": "1",
+        "port-type": "CLIENT"
+    },
+    "LOGICAL_CHANNEL|CH101": {
+        "alias": "CH101",
+        "channel-id": "101",
+        "index": "101",
+        "description": "GE-1-1-C1",
+        "transceiver": "TRANSCEIVER-1-1-C1"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C1|CH-3": {
+        "index": "3",
+        "port-id": "1",
+        "lane-id": "3",
+        "port-type": "CLIENT"
+    },
+    "MODE|8": {
+        "mode-id": "8",
+        "description": "400G::DP-64QAM::FEC-27::46.29::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "LINECARD|LINECARD-1-1": {
+        "linecard-type": "P230C",
+        "board-mode": "LA_400G_CA_200GE"
+    },
+    "OTN|CH120": {
+        "index": "120",
+        "channel-id": "120"
+    },
+    "ASSIGNMENT|CH117|ASS1": {
+        "logical-channel": "117",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "117"
+    },
+    "ASSIGNMENT|CH102|ASS1": {
+        "logical-channel": "102",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "102"
+    },
+    "OTN|CH117": {
+        "index": "117",
+        "channel-id": "117"
+    },
+    "LOGICAL_CHANNEL|CH116": {
+        "alias": "CH116",
+        "channel-id": "116",
+        "index": "116",
+        "description": "OTUCN-1-1-L2",
+        "transceiver": "TRANSCEIVER-1-1-L2"
+    },
+    "PORT|PORT-1-1-C3": {
+        "alias": "PORT-1-1-C3",
+        "port-id": "3",
+        "subcomponents": "TRANSCEIVER-1-1-C3",
+        "index": "5",
+        "port-type": "CLIENT"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-L1": {
+        "index": "5",
+        "otn": "CH115",
+        "parent": "PORT-1-1-L1",
+        "och": "OCH-1-1-L1",
+        "port-id": "1",
+        "logical-channel": "CH115",
+        "port-type": "LINE"
+    },
+    "MODE|16": {
+        "mode-id": "16",
+        "description": "300G::DP-32QAM::FEC-27::41.661::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C3": {
+        "physical-channel": "TRANSCEIVER-1-1-C3|CH-1,TRANSCEIVER-1-1-C3|CH-2,TRANSCEIVER-1-1-C3|CH-3,TRANSCEIVER-1-1-C3|CH-4",
+        "otn": "CH119",
+        "parent": "PORT-1-1-C3",
+        "index": "3",
+        "interface": "INTERFACE-1-1-C3",
+        "port-id": "3",
+        "logical-channel": "CH103,CH119",
+        "ethernet": "CH103",
+        "port-type": "CLIENT"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C1": {
+        "physical-channel": "TRANSCEIVER-1-1-C1|CH-1,TRANSCEIVER-1-1-C1|CH-2,TRANSCEIVER-1-1-C1|CH-3,TRANSCEIVER-1-1-C1|CH-4",
+        "otn": "CH117",
+        "fec-mode": "FEC_AUTO",
+        "parent": "PORT-1-1-C1",
+        "index": "1",
+        "interface": "INTERFACE-1-1-C1",
+        "port-id": "1",
+        "operation-id": "916e5e24-cea1-11ed-8ad0-acce56b12cec",
+        "logical-channel": "CH101,CH117",
+        "ethernet": "CH101",
+        "port-type": "CLIENT"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C1|CH-4": {
+        "index": "4",
+        "port-id": "1",
+        "lane-id": "4",
+        "port-type": "CLIENT"
+    },
+    "PORT|PORT-1-1-L1": {
+        "alias": "PORT-1-1-L1",
+        "port-id": "1",
+        "subcomponents": "TRANSCEIVER-1-1-L1",
+        "index": "1",
+        "port-type": "LINE"
+    },
+    "LOGICAL_CHANNEL|CH102": {
+        "alias": "CH102",
+        "channel-id": "102",
+        "index": "102",
+        "description": "GE-1-1-C2",
+        "transceiver": "TRANSCEIVER-1-1-C2"
+    },
+    "MODE|11": {
+        "mode-id": "11",
+        "description": "400G::DP-32QAM::FEC-15::50.444::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|27": {
+        "mode-id": "27",
+        "description": "200G::DP-P-16QAM::FEC-15::42.036::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "PORT|PORT-1-1-L2": {
+        "alias": "PORT-1-1-L2",
+        "port-id": "2",
+        "subcomponents": "TRANSCEIVER-1-1-L2",
+        "index": "2",
+        "port-type": "LINE"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C1|CH-2": {
+        "index": "2",
+        "port-id": "1",
+        "lane-id": "2",
+        "port-type": "CLIENT"
+    },
+    "MODE|26": {
+        "mode-id": "26",
+        "description": "200G::DP-P-16QAM::FEC-27::46.29::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "LLDP|CH104": {
+        "index": "104",
+        "channel-id": "104"
+    },
+    "MODE|24": {
+        "mode-id": "24",
+        "description": "200G::DP-16QAM::FEC-27::34.718::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "ASSIGNMENT|CH103|ASS1": {
+        "logical-channel": "103",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "103"
+    },
+    "MODE|18": {
+        "mode-id": "18",
+        "description": "300G::DP-16QAM::FEC-27::52.076::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "LOGICAL_CHANNEL|CH119": {
+        "alias": "CH119",
+        "channel-id": "119",
+        "index": "119",
+        "description": "ODUCN-1-1-C3",
+        "transceiver": "TRANSCEIVER-1-1-C3"
+    },
+    "DEVICE_METADATA|localhost": {
+        "platform": "x86_64-obx1100-r0",
+        "mac": "00:a0:c9:00:00:00",
+        "hostname": "sonic",
+        "asic_id": "0",
+        "hwsku": "p230c"
+    },
+    "LOGICAL_CHANNEL|CH115": {
+        "alias": "CH115",
+        "channel-id": "115",
+        "index": "115",
+        "description": "OTUCN-1-1-L1",
+        "transceiver": "TRANSCEIVER-1-1-L1"
+    },
+    "MODE|14": {
+        "mode-id": "14",
+        "description": "300G::DP-64QAM::FEC-27::34.718::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "ASSIGNMENT|CH120|ASS1": {
+        "logical-channel": "120",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "120"
+    },
+    "MODE|9": {
+        "mode-id": "9",
+        "description": "400G::DP-64QAM::FEC-15::42.036::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "INTERFACE|INTERFACE-1-1-C2": {
+        "index": "2",
+        "name": "INTERFACE-1-1-C2",
+        "interface-id": "2",
+        "interface-type": "CLIENT",
+        "transceiver": "TRANSCEIVER-1-1-C2",
+        "hardware-port": "PORT-1-1-C2"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C2|CH-3": {
+        "index": "7",
+        "port-id": "2",
+        "lane-id": "3",
+        "port-type": "CLIENT"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C3|CH-4": {
+        "index": "12",
+        "port-id": "3",
+        "lane-id": "4",
+        "port-type": "CLIENT"
+    },
+    "MODE|3": {
+        "mode-id": "3",
+        "description": "600G::32QAM/64QAM::FEC-15::71.96::BICHM[33]",
+        "vendor-id": "Accelink"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C2|CH-1": {
+        "index": "5",
+        "port-id": "2",
+        "lane-id": "1",
+        "port-type": "CLIENT"
+    },
+    "LOGICAL_CHANNEL|CH117": {
+        "alias": "CH117",
+        "channel-id": "117",
+        "index": "117",
+        "description": "ODUCN-1-1-C1",
+        "transceiver": "TRANSCEIVER-1-1-C1"
+    },
+    "MODE|10": {
+        "mode-id": "10",
+        "description": "400G::DP-32QAM::FEC-27::55.548::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-L2": {
+        "index": "6",
+        "otn": "CH116",
+        "parent": "PORT-1-1-L2",
+        "och": "OCH-1-1-L2",
+        "port-id": "2",
+        "logical-channel": "CH116",
+        "port-type": "LINE"
+    },
+    "MODE|1": {
+        "mode-id": "1",
+        "description": "600G::DP-64QAM::FEC-27::69.435::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|25": {
+        "mode-id": "25",
+        "description": "200G::DP-16QAM::FEC-15::31.527::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C3|CH-2": {
+        "index": "10",
+        "port-id": "3",
+        "lane-id": "2",
+        "port-type": "CLIENT"
+    },
+    "LOGICAL_CHANNEL|CH118": {
+        "alias": "CH118",
+        "channel-id": "118",
+        "index": "118",
+        "description": "ODUCN-1-1-C2",
+        "transceiver": "TRANSCEIVER-1-1-C2"
+    },
+    "MODE|20": {
+        "mode-id": "20",
+        "description": "300G::DP-P-16QAM::FEC-27::69.435::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "ASSIGNMENT|CH116|ASS1": {
+        "logical-channel": "116",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "116"
+    },
+    "LLDP|CH102": {
+        "index": "102",
+        "channel-id": "102"
+    },
+    "ASSIGNMENT|CH101|ASS1": {
+        "logical-channel": "101",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "101"
+    },
+    "MODE|7": {
+        "mode-id": "7",
+        "description": "500G::DP-32QAM::FEC-15::63.054::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "OTN|CH119": {
+        "index": "119",
+        "channel-id": "119"
+    },
+    "MODE|15": {
+        "mode-id": "15",
+        "description": "300G::DP-64QAM::FEC-15::31.527::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|5": {
+        "mode-id": "5",
+        "description": "500G::DP-64QAM::FEC-15::52.545::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "ASSIGNMENT|CH119|ASS1": {
+        "logical-channel": "119",
+        "index": "1",
+        "assignment-type": "LOGICAL_CHANNEL",
+        "id": "1",
+        "channel-id": "119"
+    },
+    "PORT|PORT-1-1-C4": {
+        "alias": "PORT-1-1-C4",
+        "port-id": "4",
+        "subcomponents": "TRANSCEIVER-1-1-C4",
+        "index": "6",
+        "port-type": "CLIENT"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C4|CH-4": {
+        "index": "16",
+        "port-id": "4",
+        "lane-id": "4",
+        "port-type": "CLIENT"
+    },
+    "ETHERNET|CH104": {
+        "index": "104",
+        "channel-id": "104"
+    },
+    "MODE|23": {
+        "mode-id": "23",
+        "description": "200G::DP-32QAM::FEC-15::25.221::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C2|CH-4": {
+        "index": "8",
+        "port-id": "2",
+        "lane-id": "4",
+        "port-type": "CLIENT"
+    },
+    "MODE|30": {
+        "mode-id": "30",
+        "description": "100G::DP-QPSK::FEC-27::34.718::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "OCH|OCH-1-1-L1": {
+        "index": "1",
+        "port-id": "1",
+        "port-type": "LINE"
+    },
+    "INTERFACE|INTERFACE-1-1-C1": {
+        "index": "1",
+        "name": "INTERFACE-1-1-C1",
+        "interface-id": "1",
+        "interface-type": "CLIENT",
+        "transceiver": "TRANSCEIVER-1-1-C1",
+        "hardware-port": "PORT-1-1-C1"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C4|CH-2": {
+        "index": "14",
+        "port-id": "4",
+        "lane-id": "2",
+        "port-type": "CLIENT"
+    },
+    "MODE|17": {
+        "mode-id": "17",
+        "description": "300G::DP-32QAM::FEC-15::37.832::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "OTN|CH116": {
+        "index": "116",
+        "channel-id": "116"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C1|CH-1": {
+        "index": "1",
+        "port-id": "1",
+        "lane-id": "1",
+        "port-type": "CLIENT"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C2": {
+        "index": "2",
+        "otn": "CH118",
+        "parent": "PORT-1-1-C2",
+        "physical-channel": "TRANSCEIVER-1-1-C2|CH-1,TRANSCEIVER-1-1-C2|CH-2,TRANSCEIVER-1-1-C2|CH-3,TRANSCEIVER-1-1-C2|CH-4",
+        "interface": "INTERFACE-1-1-C2",
+        "port-id": "2",
+        "logical-channel": "CH102,CH118",
+        "ethernet": "CH102",
+        "port-type": "CLIENT"
+    },
+    "LLDP|CH101": {
+        "index": "101",
+        "channel-id": "101"
+    },
+    "LOGICAL_CHANNEL|CH104": {
+        "alias": "CH104",
+        "channel-id": "104",
+        "index": "104",
+        "description": "GE-1-1-C4",
+        "transceiver": "TRANSCEIVER-1-1-C4"
+    },
+    "MODE|21": {
+        "mode-id": "21",
+        "description": "300G::DP-P-16QAM::FEC-15::63.054::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|12": {
+        "mode-id": "12",
+        "description": "400G::DP-16QAM::FEC-27::69.435::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "ETHERNET|CH101": {
+        "index": "101",
+        "channel-id": "101"
+    },
+    "ETHERNET|CH103": {
+        "index": "103",
+        "channel-id": "103"
+    },
+    "MODE|31": {
+        "mode-id": "31",
+        "description": "100G::DP-QPSK::FEC-15::31.527::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|4": {
+        "mode-id": "4",
+        "description": "500G::DP-64QAM::FEC-27::57.863::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "MODE|22": {
+        "mode-id": "22",
+        "description": "200G::DP-32QAM::FEC-27::27.774::BICHM[0]",
+        "vendor-id": "Accelink"
+    },
+    "OTN|CH115": {
+        "index": "115",
+        "channel-id": "115"
+    },
+    "PHYSICAL_CHANNEL|TRANSCEIVER-1-1-C3|CH-1": {
+        "index": "9",
+        "port-id": "3",
+        "lane-id": "1",
+        "port-type": "CLIENT"
+    },
+    "ETHERNET|CH102": {
+        "index": "102",
+        "channel-id": "102"
+    },
+    "PORT|PORT-1-1-C2": {
+        "alias": "PORT-1-1-C2",
+        "port-id": "2",
+        "subcomponents": "TRANSCEIVER-1-1-C2",
+        "index": "4",
+        "port-type": "CLIENT"
+    },
+    "OCH|OCH-1-1-L2": {
+        "index": "2",
+        "port-id": "2",
+        "port-type": "LINE"
+    },
+    "TRANSCEIVER|TRANSCEIVER-1-1-C4": {
+        "index": "4",
+        "otn": "CH120",
+        "parent": "PORT-1-1-C4",
+        "physical-channel": "TRANSCEIVER-1-1-C4|CH-1,TRANSCEIVER-1-1-C4|CH-2,TRANSCEIVER-1-1-C4|CH-3,TRANSCEIVER-1-1-C4|CH-4",
+        "interface": "INTERFACE-1-1-C4",
+        "port-id": "4",
+        "logical-channel": "CH104,CH120",
+        "ethernet": "CH104",
+        "port-type": "CLIENT"
+    }
+}

@@ -1,0 +1,250 @@
+{
+    "FEATURE|pmon": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "APS_PORT|APS-1-2-1_LinePrimaryIn": {
+        "index": "1",
+        "port-type": "LINE_PRIMARY_IN",
+        "operation-id": "9b4f9b32-cc6d-11ed-84a3-acce56b12cec",
+        "id": "1",
+        "power-low-threshold": "-15.0"
+    },
+    "FEATURE|radv": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "disabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "APS_PORT|APS-1-2-1_LineSecondaryIn": {
+        "index": "2",
+        "port-type": "LINE_SECONDARY_IN",
+        "operation-id": "a8550d9e-cc6d-11ed-ab5e-acce56b12cec",
+        "id": "1",
+        "power-low-threshold": "-10.0"
+    },
+    "PORT|PORT-1-2-OLPSECIN": {
+        "index": "9",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "APS-1-2-1",
+        "port-type": "OLP_SEC_IN"
+    },
+    "CONFIG_DB_INITIALIZED": {},
+    "FEATURE|bgp": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "PORT|PORT-1-2-C1OUT": {
+        "index": "2",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "APS-1-2-1",
+        "port-type": "CLIENT_OUT"
+    },
+    "FEATURE|mgmt-framework": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "True"
+    },
+    "FEATURE|swss": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "PORT|PORT-1-2-L2IN": {
+        "index": "5",
+        "port-id": "2",
+        "location": "1-2",
+        "parent": "LINECARD-1-2",
+        "port-type": "LINE_IN"
+    },
+    "PORT|PORT-1-2-OLPPRIOUT": {
+        "index": "8",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "APS-1-2-1",
+        "port-type": "OLP_PRI_OUT"
+    },
+    "PORT|PORT-1-2-C1IN": {
+        "index": "1",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "APS-1-2-1",
+        "port-type": "CLIENT_IN"
+    },
+    "APS_PORT|APS-1-2-1_CommonOutput": {
+        "index": "6",
+        "port-type": "COMMON_OUTPUT",
+        "operation-id": "b561ee44-cc6d-11ed-bd01-acce56b12cec",
+        "id": "1",
+        "power-low-threshold": "-15.0"
+    },
+    "PORT|PORT-1-2-L1IN": {
+        "index": "3",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "LINECARD-1-2",
+        "port-type": "LINE_IN"
+    },
+    "APS_PORT|APS-1-2-1_CommonIn": {
+        "index": "3",
+        "port-type": "COMMON_IN",
+        "operation-id": "8e549fe0-cc6d-11ed-bb10-acce56b12cec",
+        "id": "1",
+        "power-low-threshold": "-15.0"
+    },
+    "FEATURE|database": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "always_enabled",
+        "state": "always_enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "APS|APS-1-2-1": {
+        "wait-to-restore-time": "300000",
+        "primary-switch-threshold": "-33.0",
+        "relative-switch-threshold": "5.0",
+        "force-to-port": "PRIMARY",
+        "parent": "LINECARD-1-2",
+        "index": "1",
+        "secondary-switch-threshold": "-33.0",
+        "revertive": "false",
+        "alarm-hysteresis": "1.0",
+        "primary-switch-hysteresis": "1.0",
+        "relative-switch-threshold-offset": "0.0",
+        "hold-off-time": "2",
+        "operation-id": "8159f8ee-cc6d-11ed-9c2e-acce56b12cec",
+        "subcomponents": "PORT-1-2-OLPPRIIN,PORT-1-2-OLPPRIOUT,PORT-1-2-OLPSECIN,PORT-1-2-OLPSECOUT,PORT-1-2-OLPCOMIN,PORT-1-2-OLPCOMOUT",
+        "id": "1",
+        "location": "1-2"
+    },
+    "DEVICE_METADATA|localhost": {
+        "hwsku": "e120c",
+        "default_bgp_status": "up",
+        "hostname": "sonic",
+        "platform": "x86_64-obx1100-r0",
+        "mac": "00:a0:c9:00:00:00",
+        "default_pfcwd_status": "disable",
+        "asic_id": "1",
+        "buffer_model": "traditional"
+    },
+    "PORT|PORT-1-2-OLPSECOUT": {
+        "index": "10",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "APS-1-2-1",
+        "port-type": "OLP_SEC_OUT"
+    },
+    "ATTENUATOR|ATTENUATOR-1-2-2": {
+        "index": "2",
+        "attenuation": "0.0",
+        "component": "ATTENUATOR-1-2-2",
+        "id": "2",
+        "operation-id": "036d4730-cc6b-11ed-8edb-acce56b12cec"
+    },
+    "PORT|PORT-1-2-OLPCOMIN": {
+        "index": "11",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "APS-1-2-1",
+        "port-type": "OLP_COM_IN"
+    },
+    "FEATURE|telemetry": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "True"
+    },
+    "FEATURE|lldp": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "LINECARD|LINECARD-1-2": {
+        "linecard-type": "E120C",
+        "temp-low-alarm-threshold": "10.0",
+        "temp-high-alarm-threshold": "70.0",
+        "temp-low-warn-threshold": "15.0",
+        "temp-high-warn-threshold": "65.0"
+    },
+    "PORT|PORT-1-2-L1OUT": {
+        "index": "4",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "LINECARD-1-2",
+        "port-type": "LINE_OUT"
+    },
+    "ATTENUATOR|ATTENUATOR-1-2-1": {
+        "index": "1",
+        "attenuation": "0.0",
+        "component": "ATTENUATOR-1-2-1",
+        "id": "1",
+        "operation-id": "c44f4512-cc6a-11ed-8ab4-acce56b12cec"
+    },
+    "PORT|PORT-1-2-OLPPRIIN": {
+        "index": "7",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "APS-1-2-1",
+        "port-type": "OLP_PRI_IN"
+    },
+    "APS_PORT|APS-1-2-1_LineSecondaryOut": {
+        "index": "5",
+        "port-type": "LINE_SECONDARY_OUT",
+        "operation-id": "cf5a88e2-cc6d-11ed-9ed3-acce56b12cec",
+        "id": "1",
+        "power-low-threshold": "-18.0"
+    },
+    "FEATURE|syncd": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "APS_PORT|APS-1-2-1_LinePrimaryOut": {
+        "index": "4",
+        "port-type": "LINE_PRIMARY_OUT",
+        "operation-id": "c264f320-cc6d-11ed-b019-acce56b12cec",
+        "id": "1",
+        "power-low-threshold": "-18.0"
+    },
+    "PORT|PORT-1-2-L2OUT": {
+        "index": "6",
+        "port-id": "2",
+        "location": "1-2",
+        "parent": "LINECARD-1-2",
+        "port-type": "LINE_OUT"
+    },
+    "PORT|PORT-1-2-OLPCOMOUT": {
+        "index": "12",
+        "port-id": "1",
+        "location": "1-2",
+        "parent": "APS-1-2-1",
+        "port-type": "OLP_COM_OUT"
+    }
+}

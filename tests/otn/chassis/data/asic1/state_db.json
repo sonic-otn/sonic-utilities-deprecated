@@ -1,0 +1,263 @@
+{
+    "PORT|PORT-1-2-L1IN": {
+        "led-mode": "AUTO",
+        "parent": "LINECARD-1-2",
+        "led-color": "RED_FLASH",
+        "location": "1-2",
+        "removable": "false",
+        "oper-status": "ACTIVE",
+        "empty": "false"
+    },
+    "APS_PORT|APS-1-2-1_LinePrimaryIn": {
+        "power-los-threshold": "-20.0",
+        "power-low-threshold": "-15.0"
+    },
+    "APS_PORT|APS-1-2-1_CommonIn": {
+        "power-los-threshold": "-20.0",
+        "power-low-threshold": "-15.0"
+    },
+    "APS|APS-1-2-1": {
+        "wait-to-restore-time": "300000",
+        "primary-switch-threshold": "-33.0",
+        "relative-switch-threshold": "5.0",
+        "relative-switch-threshold-offset": "0.0",
+        "parent": "LINECARD-1-2",
+        "secondary-switch-threshold": "-33.0",
+        "active-path": "PRIMARY",
+        "hold-off-time": "2",
+        "equipment-failure": "false",
+        "revertive": "false",
+        "subcomponents": "PORT-1-2-OLPPRIIN,PORT-1-2-OLPPRIOUT,PORT-1-2-OLPSECIN,PORT-1-2-OLPSECOUT,PORT-1-2-OLPCOMIN,PORT-1-2-OLPCOMOUT",
+        "mfg-name": "AcceLink",
+        "primary-switch-hysteresis": "1.0",
+        "location": "1-2",
+        "force-to-port": "PRIMARY",
+        "removable": "false",
+        "oper-status": "ACTIVE",
+        "name": "APS-1-2-1",
+        "empty": "false",
+        "alarm-hysteresis": "1.0"
+    },
+    "CURALARM|PORT-1-2-OLPPRIIN#RX_PWR_LOW": {
+        "time-created": "1679996488589593088",
+        "resource": "PORT-1-2-OLPPRIIN",
+        "severity": "MAJOR",
+        "text": "#low-alarm-thr:-15.0#RX-PWR-LOW",
+        "type-id": "RX_PWR_LOW",
+        "id": "PORT-1-2-OLPPRIIN#RX_PWR_LOW"
+    },
+    "CURALARM|PORT-1-2-OLPCOMOUT#TX_PWR_LOW": {
+        "time-created": "1679992520000667904",
+        "resource": "PORT-1-2-OLPCOMOUT",
+        "severity": "MAJOR",
+        "text": "#low-alarm-thr:-15.0#TX-PWR-LOW",
+        "type-id": "TX_PWR_LOW",
+        "id": "PORT-1-2-OLPCOMOUT#TX_PWR_LOW"
+    },
+    "PORT|PORT-1-2-OLPSECIN": {
+        "input-offset": "0.0",
+        "rx-cd-range": "0,0",
+        "parent": "APS-1-2-1",
+        "optical-port-type": "EGRESS",
+        "equipment-failure": "false",
+        "output-offset": "0.0",
+        "low-threshold": "0.0",
+        "los-threshold": "0.0",
+        "high-threshold": "0.0",
+        "location": "1-2",
+        "removable": "false",
+        "admin-state": "ENABLED",
+        "equipment-mismatch": "false",
+        "oper-status": "ACTIVE",
+        "roll-off": "0",
+        "empty": "false"
+    },
+    "PORT|PORT-1-2-OLPSECOUT": {
+        "input-offset": "0.0",
+        "rx-cd-range": "0,0",
+        "parent": "APS-1-2-1",
+        "optical-port-type": "EGRESS",
+        "equipment-failure": "false",
+        "output-offset": "0.0",
+        "low-threshold": "0.0",
+        "los-threshold": "0.0",
+        "high-threshold": "0.0",
+        "location": "1-2",
+        "removable": "false",
+        "admin-state": "ENABLED",
+        "equipment-mismatch": "false",
+        "oper-status": "ACTIVE",
+        "roll-off": "0",
+        "empty": "false"
+    },
+    "APS_PORT|APS-1-2-1_LineSecondaryIn": {
+        "power-los-threshold": "-20.0",
+        "power-low-threshold": "-10.0"
+    },
+    "ATTENUATOR|ATTENUATOR-1-2-2": {
+        "attenuation": "0.0",
+        "name": "ATTENUATOR-1-2-2",
+        "ingress-port": "PORT-1-2-2-VOAIN",
+        "component": "ATTENUATOR-1-2-2",
+        "enabled": "true",
+        "egress-port": "PORT-1-2-2-VOAOUT",
+        "fix-attenuation": "0.55",
+        "attenuation-mode": "CONSTANT_ATTENUATION"
+    },
+    "PORT|PORT-1-2-OLPCOMIN": {
+        "input-offset": "0.0",
+        "rx-cd-range": "0,0",
+        "parent": "APS-1-2-1",
+        "optical-port-type": "EGRESS",
+        "equipment-failure": "false",
+        "output-offset": "0.0",
+        "low-threshold": "0.0",
+        "los-threshold": "0.0",
+        "high-threshold": "0.0",
+        "location": "1-2",
+        "removable": "false",
+        "admin-state": "ENABLED",
+        "equipment-mismatch": "false",
+        "oper-status": "ACTIVE",
+        "roll-off": "0",
+        "empty": "false"
+    },
+    "PORT|PORT-1-2-C1OUT": {
+        "parent": "APS-1-2-1",
+        "oper-status": "ACTIVE",
+        "empty": "false",
+        "removable": "false",
+        "location": "1-2"
+    },
+    "LINECARD|LINECARD-1-2": {
+        "led-mode": "AUTO",
+        "oper-status": "ACTIVE",
+        "parent": "CHASSIS-1",
+        "relay": "false",
+        "led-color": "RED",
+        "part-no": "E120CAC000",
+        "hardware-version": "1.2",
+        "software-version": "Sonic-E1X0C-B019",
+        "cpld-version": "0.0.0.25",
+        "subcomponents": "ATTENUATOR-1-2-1,ATTENUATOR-1-2-2,APS-1-2-1,PORT-1-2-C1IN,PORT-1-2-C1OUT,PORT-1-2-L1IN,PORT-1-2-L1OUT,PORT-1-2-L2IN,PORT-1-2-L2OUT",
+        "mfg-name": "Accelink",
+        "led-flash-interval": "300",
+        "power-admin-state": "POWER_ENABLED",
+        "mfg-date": "2022-07-19",
+        "removable": "true",
+        "serial-no": "AC04B2167002",
+        "linecard-type": "E120C",
+        "admin-state": "ENABLED",
+        "slot-status": "Ready",
+        "slot-id": "2",
+        "empty": "false"
+    },
+    "PORT|PORT-1-2-L1OUT": {
+        "parent": "LINECARD-1-2",
+        "oper-status": "ACTIVE",
+        "empty": "false",
+        "removable": "false",
+        "location": "1-2"
+    },
+    "PORT|PORT-1-2-L2IN": {
+        "led-mode": "AUTO",
+        "parent": "LINECARD-1-2",
+        "led-color": "GREEN",
+        "location": "1-2",
+        "removable": "false",
+        "oper-status": "ACTIVE",
+        "empty": "false"
+    },
+    "ATTENUATOR|ATTENUATOR-1-2-1": {
+        "attenuation": "0.0",
+        "name": "ATTENUATOR-1-2-1",
+        "ingress-port": "PORT-1-2-1-VOAIN",
+        "component": "ATTENUATOR-1-2-1",
+        "enabled": "true",
+        "egress-port": "PORT-1-2-1-VOAOUT",
+        "fix-attenuation": "0.37",
+        "attenuation-mode": "CONSTANT_ATTENUATION"
+    },
+    "PORT|PORT-1-2-OLPPRIIN": {
+        "input-offset": "0.0",
+        "rx-cd-range": "0,0",
+        "parent": "APS-1-2-1",
+        "optical-port-type": "EGRESS",
+        "equipment-failure": "false",
+        "output-offset": "0.0",
+        "low-threshold": "0.0",
+        "los-threshold": "0.0",
+        "high-threshold": "0.0",
+        "location": "1-2",
+        "removable": "false",
+        "admin-state": "ENABLED",
+        "equipment-mismatch": "false",
+        "oper-status": "ACTIVE",
+        "roll-off": "0",
+        "empty": "false"
+    },
+    "APS_PORT|APS-1-2-1_LineSecondaryOut": {
+        "power-los-threshold": "0.0",
+        "power-low-threshold": "-18.0"
+    },
+    "PORT|PORT-1-2-OLPPRIOUT": {
+        "input-offset": "0.0",
+        "rx-cd-range": "0,0",
+        "parent": "APS-1-2-1",
+        "optical-port-type": "EGRESS",
+        "equipment-failure": "false",
+        "output-offset": "0.0",
+        "low-threshold": "0.0",
+        "los-threshold": "0.0",
+        "high-threshold": "0.0",
+        "location": "1-2",
+        "removable": "false",
+        "admin-state": "ENABLED",
+        "equipment-mismatch": "false",
+        "oper-status": "ACTIVE",
+        "roll-off": "0",
+        "empty": "false"
+    },
+    "APS_PORT|APS-1-2-1_LinePrimaryOut": {
+        "power-los-threshold": "0.0",
+        "power-low-threshold": "-18.0"
+    },
+    "PORT|PORT-1-2-L2OUT": {
+        "parent": "LINECARD-1-2",
+        "oper-status": "ACTIVE",
+        "empty": "false",
+        "removable": "false",
+        "location": "1-2"
+    },
+    "PORT|PORT-1-2-OLPCOMOUT": {
+        "input-offset": "0.0",
+        "rx-cd-range": "0,0",
+        "parent": "APS-1-2-1",
+        "optical-port-type": "EGRESS",
+        "equipment-failure": "false",
+        "output-offset": "0.0",
+        "low-threshold": "0.0",
+        "los-threshold": "0.0",
+        "high-threshold": "0.0",
+        "location": "1-2",
+        "removable": "false",
+        "admin-state": "ENABLED",
+        "equipment-mismatch": "false",
+        "oper-status": "ACTIVE",
+        "roll-off": "0",
+        "empty": "false"
+    },
+    "APS_PORT|APS-1-2-1_CommonOutput": {
+        "power-los-threshold": "0.0",
+        "power-low-threshold": "-15.0"
+    },
+    "PORT|PORT-1-2-C1IN": {
+        "led-mode": "AUTO",
+        "parent": "APS-1-2-1",
+        "led-color": "RED",
+        "location": "1-2",
+        "removable": "false",
+        "oper-status": "ACTIVE",
+        "empty": "false"
+    }
+}

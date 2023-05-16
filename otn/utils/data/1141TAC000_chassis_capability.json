@@ -1,0 +1,17 @@
+{
+    "chassis_id_list": [1],
+    "max_slot_id": 11,
+    "slot_id_list": [1, 2, 3, 4],
+    "psu_id_list": [5, 6],
+    "fan_id_list": [7, 8, 9, 10, 11],
+
+    "slot_temp_low_alarm_threshold": [0, 10],
+    "slot_temp_low_warning_threshold": [10, 30],
+    "slot_temp_hi_alarm_threshold": [70, 100],
+    "slot_temp_hi_warning_threshold": [50, 70],
+
+    "chassis_temp_low_alarm_threshold": [0, 10],
+    "chassis_temp_low_warning_threshold": [10, 30],
+    "chassis_temp_hi_alarm_threshold": [70, 100],
+    "chassis_temp_hi_warning_threshold": [50, 70]
+}

@@ -1,0 +1,330 @@
+{
+    "AMPLIFIER|AMPLIFIER-1-4-2": {
+        "input-los-threshold": "-40.0",
+        "index": "2",
+        "output-low-threshold": "0.0",
+        "parent": "LINECARD-1-4",
+        "working-state": "LOS_A",
+        "enabled": "true",
+        "input-low-threshold": "-30.0",
+        "subcomponents": "PORT-1-4-2-EDFAIN,PORT-1-4-2-EDFAOUT",
+        "component": "AMPLIFIER-1-4-2",
+        "location": "1-4",
+        "operation-id": "e1dd624d-50d2-4c99-9c61-f914cff328c3",
+        "id": "2"
+    },
+    "PORT|PORT-1-4-EXTIN": {
+        "index": "11",
+        "parent": "MUX-1-4-1",
+        "low-threshold": "-20.0",
+        "los-threshold": "-30.0",
+        "port-id": "1",
+        "high-threshold": "-10.0",
+        "location": "1-4",
+        "operation-id": "265fdf10-cc6f-11ed-a844-acce56b12cec",
+        "port-type": "MD_EXP_IN"
+    },
+    "PORT|PORT-1-4-L1IN": {
+        "index": "25",
+        "port-id": "1",
+        "location": "1-4",
+        "parent": "LINECARD-1-4",
+        "port-type": "LINE_IN"
+    },
+    "ATTENUATOR|ATTENUATOR-1-4-1": {
+        "index": "1",
+        "attenuation": "15.0",
+        "component": "ATTENUATOR-1-4-1",
+        "id": "1",
+        "operation-id": "44b4b266-cc6e-11ed-a4d5-acce56b12cec"
+    },
+    "PORT|PORT-1-4-MD53OUT": {
+        "index": "22",
+        "port-id": "53",
+        "location": "1-4",
+        "parent": "MUX-1-4-1",
+        "port-type": "MD_OUT"
+    },
+    "FEATURE|database": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "always_enabled",
+        "state": "always_enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "FEATURE|mgmt-framework": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "True"
+    },
+    "MUX|MUX-1-4-1": {
+        "index": "1",
+        "name": "MUX-1-4-1",
+        "parent": "LINECARD-1-4",
+        "removable": "false",
+        "admin-state": "ENABLED",
+        "oper-status": "ACTIVE",
+        "empty": "false"
+    },
+    "CONFIG_DB_INITIALIZED": {},
+    "PORT|PORT-1-4-MD58IN": {
+        "index": "23",
+        "parent": "MUX-1-4-1",
+        "low-threshold": "-20.0",
+        "los-threshold": "-30.0",
+        "port-id": "58",
+        "high-threshold": "-10.0",
+        "location": "1-4",
+        "operation-id": "21177590-cc6f-11ed-a844-acce56b12cec",
+        "port-type": "MD_IN"
+    },
+    "FEATURE|telemetry": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "True"
+    },
+    "ATTENUATOR|ATTENUATOR-1-4-3": {
+        "index": "2",
+        "attenuation": "15.0",
+        "component": "ATTENUATOR-1-4-3",
+        "id": "3",
+        "operation-id": "83e26bfe-cc6e-11ed-8059-acce56b12cec"
+    },
+    "INTERFACE|INTERFACE-1-4-1-OSC": {
+        "interface-type": "OSC",
+        "index": "1",
+        "name": "INTERFACE-1-4-1-OSC",
+        "interface-id": "1"
+    },
+    "PORT|PORT-1-4-MD53IN": {
+        "index": "21",
+        "parent": "MUX-1-4-1",
+        "low-threshold": "-20.0",
+        "los-threshold": "-30.0",
+        "port-id": "53",
+        "high-threshold": "-10.0",
+        "location": "1-4",
+        "operation-id": "2202a9e8-cc6f-11ed-a844-acce56b12cec",
+        "port-type": "MD_IN"
+    },
+    "PORT|PORT-1-4-EXTOUT": {
+        "index": "12",
+        "port-id": "1",
+        "location": "1-4",
+        "parent": "MUX-1-4-1",
+        "port-type": "MD_EXP_OUT"
+    },
+    "PORT|PORT-1-4-MD33OUT": {
+        "index": "14",
+        "port-id": "33",
+        "location": "1-4",
+        "parent": "MUX-1-4-1",
+        "port-type": "MD_OUT"
+    },
+    "PORT|PORT-1-4-MD58OUT": {
+        "index": "24",
+        "port-id": "58",
+        "location": "1-4",
+        "parent": "MUX-1-4-1",
+        "port-type": "MD_OUT"
+    },
+    "PORT|PORT-1-4-1-EDFAIN": {
+        "index": "1",
+        "port-id": "1",
+        "location": "1-4",
+        "parent": "AMPLIFIER-1-4-1",
+        "port-type": "EDFA_IN"
+    },
+    "AMPLIFIER|AMPLIFIER-1-4-1": {
+        "input-los-threshold": "-40.0",
+        "index": "1",
+        "output-low-threshold": "0.0",
+        "parent": "LINECARD-1-4",
+        "working-state": "LOS_A",
+        "enabled": "true",
+        "input-low-threshold": "-20.0",
+        "subcomponents": "PORT-1-4-1-EDFAIN,PORT-1-4-1-EDFAOUT",
+        "los-ase-delay": "50",
+        "component": "AMPLIFIER-1-4-1",
+        "location": "1-4",
+        "operation-id": "b82f2043-77d6-4db4-8c98-8a3b81424443",
+        "id": "1"
+    },
+    "PORT|PORT-1-4-L1OUT": {
+        "index": "26",
+        "port-id": "1",
+        "location": "1-4",
+        "parent": "LINECARD-1-4",
+        "port-type": "LINE_OUT"
+    },
+    "PORT|PORT-1-4-MD38OUT": {
+        "index": "16",
+        "port-id": "38",
+        "location": "1-4",
+        "parent": "MUX-1-4-1",
+        "port-type": "MD_OUT"
+    },
+    "PORT|PORT-1-4-MD43OUT": {
+        "index": "18",
+        "port-id": "43",
+        "location": "1-4",
+        "parent": "MUX-1-4-1",
+        "port-type": "MD_OUT"
+    },
+    "PORT|PORT-1-4-MD48OUT": {
+        "index": "20",
+        "port-id": "48",
+        "location": "1-4",
+        "parent": "MUX-1-4-1",
+        "port-type": "MD_OUT"
+    },
+    "FEATURE|lldp": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "FEATURE|pmon": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "PORT|PORT-1-4-MD38IN": {
+        "index": "15",
+        "parent": "MUX-1-4-1",
+        "low-threshold": "-20.0",
+        "los-threshold": "-30.0",
+        "port-id": "38",
+        "high-threshold": "-10.0",
+        "location": "1-4",
+        "operation-id": "24a0fcc2-cc6f-11ed-a844-acce56b12cec",
+        "port-type": "MD_IN"
+    },
+    "FEATURE|bgp": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "PORT|PORT-1-4-2-EDFAOUT": {
+        "index": "4",
+        "port-id": "2",
+        "location": "1-4",
+        "parent": "AMPLIFIER-1-4-2",
+        "port-type": "EDFA_OUT"
+    },
+    "FEATURE|syncd": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "DEVICE_METADATA|localhost": {
+        "hwsku": "e100c",
+        "default_bgp_status": "up",
+        "hostname": "sonic",
+        "platform": "x86_64-obx1100-r0",
+        "mac": "00:a0:c9:00:00:00",
+        "default_pfcwd_status": "disable",
+        "asic_id": "3",
+        "buffer_model": "traditional"
+    },
+    "LINECARD|LINECARD-1-4": {
+        "linecard-type": "E100C",
+        "temp-low-alarm-threshold": "10.0",
+        "temp-high-alarm-threshold": "70.0",
+        "temp-low-warn-threshold": "15.0",
+        "temp-high-warn-threshold": "65.0"
+    },
+    "PORT|PORT-1-4-2-EDFAIN": {
+        "index": "3",
+        "port-id": "2",
+        "location": "1-4",
+        "parent": "AMPLIFIER-1-4-2",
+        "port-type": "EDFA_IN"
+    },
+    "FEATURE|swss": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "PORT|PORT-1-4-MD43IN": {
+        "index": "17",
+        "parent": "MUX-1-4-1",
+        "low-threshold": "-20.0",
+        "los-threshold": "-30.0",
+        "port-id": "43",
+        "high-threshold": "-10.0",
+        "location": "1-4",
+        "operation-id": "23c536c4-cc6f-11ed-a844-acce56b12cec",
+        "port-type": "MD_IN"
+    },
+    "PORT|PORT-1-4-MD48IN": {
+        "index": "19",
+        "parent": "MUX-1-4-1",
+        "low-threshold": "-20.0",
+        "los-threshold": "-30.0",
+        "port-id": "48",
+        "high-threshold": "-10.0",
+        "location": "1-4",
+        "operation-id": "22e6c6e6-cc6f-11ed-a844-acce56b12cec",
+        "port-type": "MD_IN"
+    },
+    "FEATURE|radv": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "disabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "PORT|PORT-1-4-MD33IN": {
+        "index": "13",
+        "parent": "MUX-1-4-1",
+        "low-threshold": "-18.0",
+        "los-threshold": "-30.0",
+        "port-id": "33",
+        "high-threshold": "-10.0",
+        "location": "1-4",
+        "operation-id": "2e592efa-cc70-11ed-b07a-acce56b12cec",
+        "port-type": "MD_IN"
+    },
+    "OSC|OSC-1-4-1": {
+        "index": "1",
+        "parent": "LINECARD-1-4",
+        "operation-id": "7e16e676-cc70-11ed-9973-acce56b12cec",
+        "enabled": "true",
+        "id": "1",
+        "rx-high-threshold": "-8.0",
+        "location": "1-4",
+        "tx-low-threshold": "-5.0",
+        "interface": "INTERFACE-1-4-1-OSC",
+        "rx-low-threshold": "-40.0"
+    },
+    "PORT|PORT-1-4-1-EDFAOUT": {
+        "index": "2",
+        "port-id": "1",
+        "location": "1-4",
+        "parent": "AMPLIFIER-1-4-1",
+        "port-type": "EDFA_OUT"
+    }
+}

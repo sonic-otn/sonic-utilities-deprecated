@@ -1,0 +1,220 @@
+{
+    "CONFIG_DB_INITIALIZED": {},
+    "NTP_SERVER|10.10.10.10": {
+        "prefer": "false",
+        "association-type": "SERVER",
+        "version": "4",
+        "address": "10.10.10.10",
+        "port": "123",
+        "iburst": "false"
+    },
+    "OSC_INTERFACE|eth0.6|172.16.100.130/24": {
+        "NULL": "NULL"
+    },
+    "TACPLUS|global": {
+        "auth_type": "login",
+        "passkey": "alibaba"
+    },
+    "VERSIONS|DATABASE": {
+        "VERSION": "version_2_0_0"
+    },
+    "SNMP_TRAP_SERVER|3": {
+        "version": "v2",
+        "port": "162",
+        "address": "10.97.197.49",
+        "id": "3"
+    },
+    "FEATURE|radv": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "disabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "SNMP_TRAP_SERVER|1": {
+        "version": "v2",
+        "port": "162",
+        "address": "30.13.24.62",
+        "id": "1"
+    },
+    "SUBSCRIPTION_DESTINATION_GROUP|XXX_terminal_sub_v100|collector_dest_group": {
+        "group-id": "collector_dest_group"
+    },
+    "TELEMETRY_CLIENT|Subscription_alarm_sensor_group": {
+        "path_target": "OC-YANG",
+        "paths": "/openconfig-system:system/openconfig-alarms:alarms/alarm/state",
+        "report_interval": "0",
+        "heartbeat_interval": "900000",
+        "report_type": "stream",
+        "dst_group": "collector_dest_group"
+    },
+    "SAVE_CONFIG|save": {
+        "namespace": "host"
+    },
+    "NTP_SERVER|10.97.197.48": {
+        "prefer": "false",
+        "association-type": "SERVER",
+        "version": "4",
+        "address": "10.97.197.48",
+        "port": "123",
+        "iburst": "false"
+    },
+    "MGMT_INTERFACE2|eth0.1|192.168.100.100/30": {
+        "NULL": "NULL"
+    },
+    "AAA|authentication": {
+        "login": "tacacs+",
+        "failthrough": "True"
+    },
+    "CHASSIS|CHASSIS-1": {
+        "temp-low-alarm-threshold": "10.0",
+        "temp-high-alarm-threshold": "70.0",
+        "temp-low-warn-threshold": "15.0",
+        "temp-high-warn-threshold": "65.0"
+    },
+    "FEATURE|database": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "always_enabled",
+        "state": "always_enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "TELEMETRY_CLIENT|Global": {
+        "retry_interval": "20",
+        "unidirectional": "true",
+        "encoding": "ENC_JSON_IETF"
+    },
+    "FEATURE|mgmt-framework": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "True"
+    },
+    "OSC_INTERFACE|eth0.5|172.16.100.129/24": {
+        "NULL": "NULL"
+    },
+    "PERSISTENT_SUBSCRIPTION|XXX_terminal_sub_v100": {
+        "protocol": "STREAM_GRPC",
+        "name": "XXX_terminal_sub_v100",
+        "encoding": "ENC_JSON_IETF"
+    },
+    "SENSOR_GROUP|alarm_sensor_group": {
+        "sensor-group-id": "alarm_sensor_group",
+        "sensor-paths": "/openconfig-system:system/openconfig-alarms:alarms/alarm/state"
+    },
+    "FEATURE|swss": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "DESTINATION_GROUP|collector_dest_group": {
+        "group-id": "collector_dest_group"
+    },
+    "FEATURE|bgp": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "SNMP_TRAP_SERVER|2": {
+        "version": "v2",
+        "port": "162",
+        "address": "10.97.197.48",
+        "id": "2"
+    },
+    "KDUMP|config": {
+        "enabled": "false",
+        "num_dumps": "3",
+        "memory": "0M-2G:256M,2G-4G:320M,4G-8G:384M,8G-:448M"
+    },
+    "SENSOR_PROFILE|XXX_terminal_sub_v100|ethernet_sensor_group": {
+        "sensor-group": "ethernet_sensor_group",
+        "sample-interval": "5000"
+    },
+    "TELEMETRY_CLIENT|Subscription_ethernet_sensor_group": {
+        "path_target": "OC-YANG",
+        "paths": "/openconfig-transport-line-protection:aps/aps-modules/aps-module/ports,/openconfig-interfaces:interfaces/interface/state/counters,/openconfig-system:system/cpus/cpu/state",
+        "report_interval": "5000",
+        "heartbeat_interval": "0",
+        "report_type": "stream",
+        "dst_group": "collector_dest_group"
+    },
+    "SENSOR_PROFILE|XXX_terminal_sub_v100|alarm_sensor_group": {
+        "heartbeat-interval": "900",
+        "sensor-group": "alarm_sensor_group",
+        "sample-interval": "0"
+    },
+    "FEATURE|telemetry": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "True"
+    },
+    "FEATURE|syncd": {
+        "has_per_asic_scope": "True",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "False",
+        "has_timer": "False"
+    },
+    "SENSOR_GROUP|ethernet_sensor_group": {
+        "sensor-group-id": "ethernet_sensor_group",
+        "sensor-paths": "/openconfig-transport-line-protection:aps/aps-modules/aps-module/ports,/openconfig-interfaces:interfaces/interface/state/counters,/openconfig-system:system/cpus/cpu/state"
+    },
+    "MGMT_INTERFACE|eth1|11.159.183.248/24": {
+        "gwaddr": "11.159.183.247"
+    },
+    "DESTINATION|collector_dest_group|10.97.197.48|15555": {
+        "destination-port": "15555",
+        "priority": "0",
+        "destination-address": "10.97.197.48"
+    },
+    "OSC_INTERFACE|eth0.4|172.16.100.128/24": {
+        "NULL": "NULL"
+    },
+    "FEATURE|lldp": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "DEVICE_METADATA|localhost": {
+        "buffer_model": "traditional",
+        "default_bgp_status": "up",
+        "default_pfcwd_status": "disable",
+        "hostname": "anon",
+        "sshd-alive-timeout": "1800"
+    },
+    "FEATURE|pmon": {
+        "has_per_asic_scope": "False",
+        "high_mem_alert": "disabled",
+        "auto_restart": "enabled",
+        "state": "enabled",
+        "has_global_scope": "True",
+        "has_timer": "False"
+    },
+    "TACPLUS_SERVER|11.167.164.66": {
+        "priority": "1",
+        "tcp_port": "49"
+    },
+    "TELEMETRY_CLIENT|DestinationGroup_collector_dest_group": {
+        "dst_addr": "10.97.197.48:15555"
+    },
+    "NTP|global": {
+        "enabled": "true"
+    }
+}
