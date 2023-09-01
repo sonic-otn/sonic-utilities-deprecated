@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7b45c8e3-5508-4846-a6b2-fb28493c7452" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/otn/chassis/chassis.py" beforeDir="false" afterPath="$PROJECT_DIR$/otn/chassis/chassis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otn/config_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/otn/config_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otn/slot/olp.py" beforeDir="false" afterPath="$PROJECT_DIR$/otn/slot/olp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otn/slot/slot.py" beforeDir="false" afterPath="$PROJECT_DIR$/otn/slot/slot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otn/system/alarm.py" beforeDir="false" afterPath="$PROJECT_DIR$/otn/system/alarm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otn/utils/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/otn/utils/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/otn/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/otn/utils/utils.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2UmIR2cyFpUysN5VBjgpw8PT1QP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "/Users/jiaweiyu/PycharmProjects/sonic-otn-utilities",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b45c8e3-5508-4846-a6b2-fb28493c7452" name="Changes" comment="" />
+      <created>1693538316427</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1693538316427</updated>
+      <workItem from="1693538317757" duration="428000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

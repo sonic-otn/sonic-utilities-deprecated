@@ -31,6 +31,15 @@ def info(ctx):
 def config(ctx):
     show_slot_config_impl(ctx.obj['slot_idx'])
 
+@slot.command("cardtype")
+@click.pass_context
+def cardtype(ctx):
+    show_slot_field_info(ctx.obj['slot_idx'], 'linecard-type')
+
+@slot.command("board-mode")
+@click.pass_context
+def board_mode(ctx):
+    show_slot_field_info(ctx.obj['slot_idx'], 'board-mode')
 #################################### alarm ############################################################
 @slot.group()
 @click.pass_context
@@ -46,7 +55,7 @@ def current(ctx):
 @click.pass_context
 def history(ctx):
     show_slot_alarm_history(ctx.obj['slot_idx'])
-        
+
 slot.add_command(slot_upgrade.show_slot_upgrade)
 slot.add_command(edfa.edfa)
 slot.add_command(voa.voa)
@@ -70,10 +79,10 @@ def pm(ctx, pm_type):
 def current(ctx):
     slot_id = ctx.obj['slot_idx']
     show_slot_pm_current_impl(slot_id, "LINECARD", ctx.obj['pm_type'])
-    
+
 @pm.command()
 @click.pass_context
-@click.argument('bin_idx',type=click.IntRange(1, 96),required=True)
+@click.argument('bin_idx',type=click.IntRange(1, 96),required=True)#TODO dynamic
 def history(ctx, bin_idx):
     slot_id = ctx.obj['slot_idx']
     show_slot_pm_history_impl(slot_id, "LINECARD", ctx.obj['pm_type'], bin_idx)
@@ -126,21 +135,21 @@ def hi_warning(ctx,hw_value):
     la_value = ctx.obj['la_value']
     lw_value = ctx.obj['lw_value']
     ha_value = ctx.obj['ha_value']
-    
+
     if ha_value < hw_value:
         click.echo(f"Error, high alarm threshold should be greater than high warning threshold.")
         return
-    
+
     if la_value > lw_value:
         click.echo(f"Error, low alarm threshold should be less than low warning threshold.")
         return
-                   
-    config_slot(slot_id, "temp-low-alarm-threshold", la_value) 
-    config_slot(slot_id, "temp-low-warn-threshold", lw_value) 
-    config_slot(slot_id, "temp-high-alarm-threshold", ha_value) 
+
+    config_slot(slot_id, "temp-low-alarm-threshold", la_value)
+    config_slot(slot_id, "temp-low-warn-threshold", lw_value)
+    config_slot(slot_id, "temp-high-alarm-threshold", ha_value)
     config_slot(slot_id, "temp-high-warn-threshold", hw_value)
     click.echo('Successed')
-    
+
 @cfg_slot.group("console")
 @click.pass_context
 def console_cfg(ctx):
@@ -153,14 +162,14 @@ def slot_baudrate_cfg(ctx,baudrate_value):
     slot_id = ctx.obj['slot_idx']
     set_slot_synchronized_save(slot_id, 'LINECARD', f'LINECARD-1-{slot_id}', 'baud-rate', baudrate_value)
     click.echo('Successed')
-       
+
 @cfg_slot.command('type')
 @click.argument('cfg_type',type=click.Choice(CARD_TYPE_LIST+[CARD_TYPE_NONE]),required=True)
 @click.argument('board_mode',type=click.Choice(BOARD_MODE_STRING),required=False,default='L1_400G_CA_100GE')
 @click.pass_context
 def card_type(ctx,cfg_type,board_mode):
     slot_id = ctx.obj['slot_idx']
-    
+
     try:
         if cfg_type in OBX_TERMINAL_LINECARD:
             config_terminal_linecard(slot_id, cfg_type, board_mode)
@@ -175,7 +184,13 @@ def card_type(ctx,cfg_type,board_mode):
             click.echo(f'Error, Invalid linecard type {cfg_type}')
     except Exception as e:
         click.echo(e)
-    
+
+#################################### clear ############################################################
+@cfg_slot.command("clear-alarm")
+@click.pass_context
+def clear_alarm(ctx):
+    clear_slot_alarm(ctx.obj['slot_idx'])
+
 #################################### clear pm ############################################################
 @cfg_slot.group("clear-pm")
 @click.argument('pm_type',type=click.Choice(['15','24', 'all']),required=True)
@@ -192,7 +207,7 @@ def current(ctx):
     state_db = get_state_db_by_slot(slot_id)
     set_table_field(state_db, "CLEANPM",table_key,'period', pm_type)
     click.echo('Successed')
-                
+
 cfg_slot.add_command(slot_upgrade.slot_upgrade)
 cfg_slot.add_command(edfa.cfg_edfa)
 cfg_slot.add_command(voa.cfg_voa)
@@ -214,29 +229,35 @@ def switch():
 @click.argument('slot_idx',type=DynamicModuleIdxChoice('slot'), required=True)
 def switch_slot(slot_idx):
     run_slot_cli_comand(slot_idx, 'show version')
-       
+
 #################################################################################################
 def show_slot_info_impl(slot_id):
     table_name = "LINECARD"
     show_slot_info(slot_id, table_name)
     show_slot_pm_instant(slot_id, PM_LIST, table_name)
-    
+
 def show_slot_info(slot_id, table_name):
     table_key = f'{table_name}-1-{slot_id}'
     db = get_state_db_by_slot(slot_id)
     dict_kvs = get_db_table_fields(db, table_name, table_key)
     show_key_value_list(STATE_LIST,dict_kvs)
 
+def show_slot_field_info(slot_id, field_name):
+    table_key = f'LINECARD-1-{slot_id}'
+    db = get_state_db_by_slot(slot_id)
+    value = get_db_table_field(db, "LINECARD", table_key, field_name)
+    click.echo(value)
+
 def show_slot_config(slot_id, table_name):
     table_key = f'{table_name}-1-{slot_id}'
     db = get_config_db_by_slot(slot_id)
     dict_kvs = get_db_table_fields(db, table_name, table_key)
     show_key_value_list(CONFIG_LIST,dict_kvs)
-    
+
 def show_slot_config_impl(slot_id):
     table_name = "LINECARD"
     show_slot_config(slot_id, table_name)
- 
+
 def show_slot_pm_instant(slot_id, pm_list, table_name):
     section_str = ""
     db = get_counter_db_by_slot(slot_id)
@@ -289,14 +310,14 @@ def create_terminal_linecard_config(slot_id, cfg_type, board_mode):
     run_command(cmd)
 
 def config_linecard_type_none(slot_id):
-    log.log_info(f"real state: {is_slot_present(slot_id)} {is_card_type_mismatch(slot_id)}") 
+    log.log_info(f"real state: {is_slot_present(slot_id)} {is_card_type_mismatch(slot_id)}")
     if not is_slot_present(slot_id) or is_card_type_mismatch(slot_id):
         flush_none_terminal_linecard_data(slot_id)
     else:
         echo_log_exit("Error: Cannot config cardtype NONE if linecard present and type matched.")
 
 def config_optical_linecard(slot_id, cfg_type):
-    log.log_info(f"real state: {is_slot_present(slot_id)} {get_slot_card_type(slot_id)}")       
+    log.log_info(f"real state: {is_slot_present(slot_id)} {get_slot_card_type(slot_id)}")
     if is_emtpty_slot_without_cardtype(slot_id):
         flush_none_terminal_linecard_data(slot_id)
         click.echo(f'Setting card {slot_id} type {cfg_type} now, Wait for a minute..')
@@ -314,8 +335,8 @@ def is_terminal_linecard_update_boardmode(slot_id, cfg_type, board_mode):
         and cfg_type in OBX_TERMINAL_LINECARD and NA_VALUE != real_board_mode \
         and board_mode != real_board_mode
 
-def config_terminal_linecard(slot_id, cfg_type, board_mode): 
-    log.log_info(f"real state: {is_slot_present(slot_id)} {get_slot_card_type(slot_id)} {slot_is_ready(slot_id)} {get_slot_board_mode(slot_id)}")       
+def config_terminal_linecard(slot_id, cfg_type, board_mode):
+    log.log_info(f"real state: {is_slot_present(slot_id)} {get_slot_card_type(slot_id)} {slot_is_ready(slot_id)} {get_slot_board_mode(slot_id)}")
     if is_emtpty_slot_without_cardtype(slot_id) \
         or is_terminal_linecard_update_boardmode(slot_id, cfg_type, board_mode):
             log.log_info(f"Config slot {slot_id} {cfg_type} {board_mode}, real {is_slot_present(slot_id)}")
@@ -328,6 +349,12 @@ def config_terminal_linecard(slot_id, cfg_type, board_mode):
             echo_log_exit("Error: The linecard is running, and board mode is not changed.")
         else:
             echo_log_exit("Error: Please remove the linecard and config cardtype to NONE first.")
+
+def clear_slot_alarm(slot_id):
+    db = get_history_db_by_slot(slot_id)
+    pattern = "HISALARM:*"
+    message = clear_db_entity_alarm_history(db, pattern)
+    click.echo(message)
             
 STATE_LIST = [
     {'Field': 'linecard-type',              'show_name': 'Card Type'},

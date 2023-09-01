@@ -11,6 +11,14 @@ def connect_muti_db_common(slot_id, db_id):
         redis_unix_socket_path = f"/var/run/redis{slot_idx - 1}/redis.sock"
     return swsscommon.DBConnector(db_id, redis_unix_socket_path, 0)
 
+def clear_db_entity_alarm_history(db, pattern):
+    try:
+        for table_key in db.keys(pattern):
+            db.delete(table_key)
+        return "Succeeded"
+    except Exception as e:
+        return e
+
 def set_table_field(db,table_name,table_key,field,value):
     table = swsscommon.Table(db, table_name)
     data = [(field, str(value))]
