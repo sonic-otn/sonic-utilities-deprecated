@@ -125,7 +125,13 @@ def hi_warning(ctx,hw_value):
     config_chassis(chassis_id, "temp-high-alarm-threshold", ha_value)
     config_chassis(chassis_id, "temp-high-warn-threshold", hw_value) 
     click.echo('Succeeded')
-    
+
+#################################### clear ############################################################
+@cfg_chassis.command("clear-alarm")
+@click.pass_context
+def clear_alarm(ctx):
+    clear_chassis_alarm()
+
 #################################### clear pm ############################################################
 @cfg_chassis.group("clear-pm")
 @click.argument('pm_type',type=click.Choice(['15','24', 'all']),required=True)
@@ -253,7 +259,13 @@ def get_chassis_fan_info(slot_id):
     table_key = f"FAN-1-{slot_id}_Temperature:15_pm_current"
     temp = get_pm_instant(counter_db, "FAN", table_key)
     return [slot_id, prov, status, pn, sn, hard_version, soft_version, temp]
-            
+
+def clear_chassis_alarm():
+    db = get_chassis_history_db()
+    pattern = "HISALARM:*"
+    message = clear_db_entity_alarm_history(db, pattern)
+    click.echo(message)
+
 STATE_LIST = [
     {'Field': 'part-no',                    'show_name': 'Part no'},
     {'Field': 'serial-no',                  'show_name': 'Serial no'},
