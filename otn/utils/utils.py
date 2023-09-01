@@ -197,6 +197,17 @@ def get_module_ids(ctx):
         else:
             return [value]
 
+def get_module_ids_plus_offset(ctx):
+    module_name = ctx.obj['module_type']
+    value = ctx.obj['module_idx']
+    offset = ctx.obj[module_name + '_slot_id_offset']
+    if((module_name+'_id_list' in ctx.obj)):
+        module_list = ctx.obj[module_name+'_id_list']
+        if value == "all":
+            return [int(m)+offset for m in module_list]
+        else:
+            return [int(value) + offset]
+
 def show_key_value_list(target_list, dict_kvs):
     section_str = ""
     for field in target_list:
@@ -315,6 +326,47 @@ def show_db_entity_alarm_history(db, entity_name):
         index = index + 1     
     click.echo(tabulate(current_alarm_info, current_alarm_header, tablefmt="simple"))
     click.echo("")
+
+def show_db_olp_switch_info(db, slot_id, olp_ids):
+    keys = sorted(list(db.keys(f'OLP_SWITCH_INFO|APS-1-{slot_id}-{olp_ids}*')), reverse=True)[:10]
+    for i, key in enumerate(keys):
+        table_name = key.split('|')[0]
+        table_key = key.split('|')[1]
+        datas = get_db_table_fields(db, table_name, table_key)
+        index = int(datas['index'])
+        timestamp = int(datas['time-stamp']) / 1000
+        time = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+        interval = int(datas['interval'])
+        reason = datas['reason']
+        primary_in = float(datas['switching-primary_in'])
+        secondary_in = float(datas['switching-secondary_in'])
+        common_out = float(datas['switching-common_out'])
+        sample_count = int(datas['pointers'])
+        data = [
+            ("Index".ljust(FIELD_WITH) + ": ", index),
+            ("Time".ljust(FIELD_WITH) + ": ", time),
+            ("TimeInterval".ljust(FIELD_WITH) + ": ", f"{interval} ms"),
+            ("Active-path".ljust(FIELD_WITH) + ": ", reason),
+            ("Primary-In(dBm)".ljust(FIELD_WITH) + ": ", primary_in),
+            ("Secondary-In(dBm)".ljust(FIELD_WITH) + ": ", secondary_in),
+            ("Common-Out(dBm)".ljust(FIELD_WITH) + ": ", common_out),
+            ("SampleCnt".ljust(FIELD_WITH) + ": ", sample_count),
+        ]
+        click.echo(tabulate(data, tablefmt="plain"))
+
+        olp_switch_harder = ["TimeIndex(ms)", "Primary-In(dBm)", "Secondary-In(dBm)", "Common-Out(dBm)"]
+        olp_switch_info = []
+        for i in range(-40, 41):
+            state = "before" if i < 0 else "after"
+            primary_in_key = f'{state}-{abs(i)}-primary_in'
+            secondary_in_key = f'{state}-{abs(i)}-secondary_in'
+            common_out_key = f'{state}-{abs(i)}-common_out'
+            primary_in_value = float(datas.get(primary_in_key, primary_in))
+            secondary_in_value = float(datas.get(secondary_in_key, secondary_in))
+            common_out_value = float(datas.get(common_out_key, common_out))
+            olp_switch_info.append(
+                [f"{i:9}", f"{primary_in_value:10.2f}", f"{secondary_in_value:14.2f}", f"{common_out_value:12.2f}"])
+        click.echo(tabulate(olp_switch_info, olp_switch_harder, tablefmt="simple"))
 
 def show_key_value_list_with_module(target_list, dict_kvs):
     section_str = ""

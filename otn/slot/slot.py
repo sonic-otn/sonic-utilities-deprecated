@@ -31,6 +31,15 @@ def info(ctx):
 def config(ctx):
     show_slot_config_impl(ctx.obj['slot_idx'])
 
+@slot.command("cardtype")
+@click.pass_context
+def cardtype(ctx):
+    show_slot_field_info(ctx.obj['slot_idx'], 'linecard-type')
+
+@slot.command("board-mode")
+@click.pass_context
+def board_mode(ctx):
+    show_slot_field_info(ctx.obj['slot_idx'], 'board-mode')
 #################################### alarm ############################################################
 @slot.group()
 @click.pass_context
@@ -227,6 +236,12 @@ def show_slot_info(slot_id, table_name):
     dict_kvs = get_db_table_fields(db, table_name, table_key)
     show_key_value_list(STATE_LIST,dict_kvs)
 
+def show_slot_field_info(slot_id, field_name):
+    table_key = f'LINECARD-1-{slot_id}'
+    db = get_state_db_by_slot(slot_id)
+    value = get_db_table_field(db, "LINECARD", table_key, field_name)
+    click.echo(value)
+
 def show_slot_config(slot_id, table_name):
     table_key = f'{table_name}-1-{slot_id}'
     db = get_config_db_by_slot(slot_id)
@@ -328,7 +343,13 @@ def config_terminal_linecard(slot_id, cfg_type, board_mode):
             echo_log_exit("Error: The linecard is running, and board mode is not changed.")
         else:
             echo_log_exit("Error: Please remove the linecard and config cardtype to NONE first.")
-            
+
+def clear_slot_alarm(slot_id):
+    db = get_history_db_by_slot(slot_id)
+    pattern = "HISALARM:*"
+    message = clear_db_entity_alarm_history(db, pattern)
+    click.echo(message)
+
 STATE_LIST = [
     {'Field': 'linecard-type',              'show_name': 'Card Type'},
     {'Field': 'board-mode',                 'show_name': 'Board mode'},
