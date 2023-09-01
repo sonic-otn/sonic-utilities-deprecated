@@ -175,6 +175,12 @@ def card_type(ctx,cfg_type,board_mode):
             click.echo(f'Error, Invalid linecard type {cfg_type}')
     except Exception as e:
         click.echo(e)
+
+#################################### clear ############################################################
+@cfg_slot.command("clear-alarm")
+@click.pass_context
+def clear_alarm(ctx):
+    clear_slot_alarm(ctx.obj['slot_idx'])
     
 #################################### clear pm ############################################################
 @cfg_slot.group("clear-pm")
@@ -328,7 +334,14 @@ def config_terminal_linecard(slot_id, cfg_type, board_mode):
             echo_log_exit("Error: The linecard is running, and board mode is not changed.")
         else:
             echo_log_exit("Error: Please remove the linecard and config cardtype to NONE first.")
-            
+
+def clear_slot_alarm(slot_id):
+    db = get_history_db_by_slot(slot_id)
+    patterns = ["HISALARM:*", "HISEVENT:*"]
+    for pattern in patterns:
+        clear_db_entity_alarm_history(db, pattern)
+    click.echo("Succeed")
+
 STATE_LIST = [
     {'Field': 'linecard-type',              'show_name': 'Card Type'},
     {'Field': 'board-mode',                 'show_name': 'Board mode'},

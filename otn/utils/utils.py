@@ -418,7 +418,7 @@ def get_pm_instant(db, table_name, table_key):
 
 def run_OLSS_utils_set(slot_id, table_name, table_key, field,value):
     cmd = f'sudo test_cmd cmd -n {slot_id -1} set {table_name} {table_key} {field}={value}'
-    run_command(cmd, return_cmd=True)
+    return run_command(cmd, return_cmd=True)
 
 def run_OLSS_utils_get(slot_id, table_name, table_key, field):
     cmd = f'sudo test_cmd cmd -n {slot_id -1} get {table_name} {table_key} {field}'

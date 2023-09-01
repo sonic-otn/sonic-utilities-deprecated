@@ -31,23 +31,7 @@ def config(ctx):
 def switch_info(ctx):
     slot_id = ctx.obj['slot_idx']
     olp_ids = get_module_ids(ctx)
-    
-    for olp_id in olp_ids:
-        outputs = run_OLSS_utils_set(slot_id, 'APS', f'APS-1-{slot_id}-{olp_id}', 'collect-switch-info', f'true')
-        if 'failed' in outputs:
-            click.echo(outputs)
-        time.sleep(2)
-        state_db = get_state_db_by_slot(slot_id)
-        get_keys = sorted(list(state_db.keys(f'OLP_SWITCH_INFO|APS-1-{slot_id}-{olp_ids}*')),reverse=True)[:10]
-        for i,key in enumerate(get_keys):
-            table_name = key.split('|')[0]
-            table_key = key.split('|')[1]
-            # datas = ConnectDb(state_db).get_table_infos(table_name,table_key)[0]
-            # pattern = r'primary_in'
-            # nums = len(re.findall(pattern, str(datas)))
-            # state_list = StructDatas().show_shitch_info()
-            # TablesViews().filter_switch_info_data(datas,state_list,nums,i+1)
-            # TablesViews().filter_switch_info_datas(datas,nums)
+    show_olp_switch_info(slot_id, olp_ids)
 #################################### pm ############################################################
 @olp.group()
 @click.pass_context
@@ -368,6 +352,55 @@ def show_olps_pm_history(slot_id, module_ids, table_name, pm_type, bin_idx):
     for module_id in module_ids:
         show_module_pm_history_head(slot_id, module_id, table_name, pm_type, bin_idx)
         show_module_olp_pm_history(slot_id, module_id, PM_LIST, "APS_PORT", pm_type, bin_idx)
+
+def show_olp_switch_info(slot_id, olp_ids):
+    for olp_id in olp_ids:
+        outputs = run_OLSS_utils_set(slot_id, 'APS', f'APS-1-{slot_id}-{olp_id}', 'collect-switch-info', f'true')
+        if 'failed' in outputs:
+            click.echo(outputs)
+        time.sleep(2)
+        db = get_state_db_by_slot(slot_id)
+        keys = sorted(list(db.keys(f'OLP_SWITCH_INFO|APS-1-{slot_id}-{olp_ids}*')), reverse=True)[:10]
+        for i, key in enumerate(keys):
+            table_name = key.split('|')[0]
+            table_key = key.split('|')[1]
+            datas = get_db_table_fields(db, table_name, table_key)
+            index = int(datas['index'])
+            timestamp = int(datas['time-stamp']) / 1000
+            gettime = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+            interval = int(datas['interval'])
+            reason = datas['reason']
+            primary_in = float(datas['switching-primary_in'])
+            secondary_in = float(datas['switching-secondary_in'])
+            common_out = float(datas['switching-common_out'])
+            sample_count = int(datas['pointers'])
+            data = [
+                ("Index".ljust(FIELD_WITH) + ": ", index),
+                ("Time".ljust(FIELD_WITH) + ": ", gettime),
+                ("TimeInterval".ljust(FIELD_WITH) + ": ", f"{interval} ms"),
+                ("Active-path".ljust(FIELD_WITH) + ": ", reason),
+                ("Primary-In(dBm)".ljust(FIELD_WITH) + ": ", primary_in),
+                ("Secondary-In(dBm)".ljust(FIELD_WITH) + ": ", secondary_in),
+                ("Common-Out(dBm)".ljust(FIELD_WITH) + ": ", common_out),
+                ("SampleCnt".ljust(FIELD_WITH) + ": ", sample_count),
+            ]
+            click.echo(tabulate(data, tablefmt="plain"))
+
+            olp_switch_harder = ["TimeIndex(ms)", "Primary-In(dBm)", "Secondary-In(dBm)", "Common-Out(dBm)"]
+            olp_switch_info = []
+            for i in range(-40, 41):
+                state = "before" if i < 0 else "after"
+                primary_in_key = f'{state}-{abs(i)}-primary_in'
+                secondary_in_key = f'{state}-{abs(i)}-secondary_in'
+                common_out_key = f'{state}-{abs(i)}-common_out'
+                primary_in_value = float(datas.get(primary_in_key, primary_in))
+                secondary_in_value = float(datas.get(secondary_in_key, secondary_in))
+                common_out_value = float(datas.get(common_out_key, common_out))
+                olp_switch_info.append(
+                    [f"{i:9}", f"{primary_in_value:10.2f}", f"{secondary_in_value:14.2f}", f"{common_out_value:12.2f}"])
+            click.echo(tabulate(olp_switch_info, olp_switch_harder, tablefmt="simple"))
+
+
 
 OLP_PORTS = ["LinePrimaryIn", "LinePrimaryOut","LineSecondaryIn", "LineSecondaryOut", "CommonIn", "CommonOutput"]
     
