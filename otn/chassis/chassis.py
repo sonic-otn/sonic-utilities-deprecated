@@ -125,7 +125,13 @@ def hi_warning(ctx,hw_value):
     config_chassis(chassis_id, "temp-high-alarm-threshold", ha_value)
     config_chassis(chassis_id, "temp-high-warn-threshold", hw_value) 
     click.echo('Succeeded')
-    
+
+#################################### clear ############################################################
+@cfg_chassis.command("clear-alarm")
+@click.pass_context
+def clear_alarm(ctx):
+    clear_chassis_alarm()
+
 #################################### clear pm ############################################################
 @cfg_chassis.group("clear-pm")
 @click.argument('pm_type',type=click.Choice(['15','24', 'all']),required=True)

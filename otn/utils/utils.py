@@ -106,11 +106,13 @@ def slot_is_linecard(slot_id):
 
 def slot_is_psu(slot_id):
     chassis_info = get_chassis_capability()
-    return slot_id in chassis_info["psu_id_list"]
+    psu_id = slot_id - chassis_info["psu_slot_id_offset"]
+    return psu_id in chassis_info["psu_id_list"]
 
 def slot_is_fan(slot_id):
     chassis_info = get_chassis_capability()
-    return slot_id in chassis_info["fan_id_list"]
+    fan_id = slot_id - chassis_info["fan_slot_id_offset"]
+    return fan_id in chassis_info["fan_id_list"]
 
 def get_linecard_capability(slot_idx):
     card_type = get_slot_card_type(slot_idx)
@@ -186,7 +188,7 @@ def is_slot_present(slot_id):
         return True
     else:
         return False
-    
+
 def get_module_ids(ctx):
     module_name = ctx.obj['module_type']
     value = ctx.obj['module_idx']
@@ -196,6 +198,17 @@ def get_module_ids(ctx):
             return module_list
         else:
             return [value]
+
+def get_module_ids_plus_offset(ctx):
+    module_name = ctx.obj['module_type']
+    value = ctx.obj['module_idx']
+    offset = ctx.obj[module_name + '_slot_id_offset']
+    if((module_name+'_id_list' in ctx.obj)):
+        module_list = ctx.obj[module_name+'_id_list']
+        if value == "all":
+            return [int(m)+offset for m in module_list]
+        else:
+            return [int(value) + offset]
 
 def show_key_value_list(target_list, dict_kvs):
     section_str = ""
@@ -239,7 +252,7 @@ def show_slot_alarm_history(slot_id):
     db = get_history_db_by_slot(slot_id)
     show_db_entity_alarm_history(db, f'Slot {slot_id}')
     show_db_entity_alarm_current(db, f'Slot {slot_id} History Event', HISEVENT)
-    
+
 def show_chassis_alarm_current():
     db = get_chassis_state_db()
     show_db_entity_alarm_current(db, f'System Current Alarm', CURALARM)
@@ -258,7 +271,7 @@ def show_db_entity_alarm_current(db, entity_name, talbe_name):
     click.echo(f'{entity_name} Total num: {len(keys)}')
     if not keys:
         return
-    
+
     alarm_profile_dic = get_system_alarm_profile()
     alarms = []
     for key in keys:
@@ -273,13 +286,13 @@ def show_db_entity_alarm_current(db, entity_name, talbe_name):
         else:
             click.echo(f"Warning: invalid alarm type {alarm['type-id']}")
     sorted_alarms = sorted(alarms, key=operator.itemgetter('time-created'),reverse=True)
-    
+
     current_alarm_header = ['id','time-created','resource','severity','type-id','text','sa','type']
     current_alarm_info = []
     index = 1
     for alarm in sorted_alarms:
         current_alarm_info.append([index, alarm['time-created-str'], alarm['resource'], alarm['severity'], alarm['type-id'], alarm['text'], alarm['sa'], alarm['type']])
-        index = index + 1     
+        index = index + 1
     click.echo(tabulate(current_alarm_info, current_alarm_header, tablefmt="simple"))
     click.echo("")
 
@@ -288,7 +301,7 @@ def show_db_entity_alarm_history(db, entity_name):
     click.echo(f'{entity_name} History Alarm Total num: {len(keys)}')
     if not keys:
         return
-    
+
     alarms = []
     alarm_profile_dic = get_system_alarm_profile()
     for key in keys:
@@ -306,15 +319,56 @@ def show_db_entity_alarm_history(db, entity_name):
         alarm['type'] = alarm_profile_dic[alarm['type-id']]["Type"]
         alarms.append(alarm)
     sorted_alarms = sorted(alarms, key=operator.itemgetter('time-created'),reverse=True)
-    
+
     current_alarm_header = ['id','time-created','time-cleared', 'resource','severity','type-id','text','sa','type']
     current_alarm_info = []
     index = 1
     for alarm in sorted_alarms:
         current_alarm_info.append([index, alarm['time-created-str'], alarm['time-cleared-str'], alarm['resource'], alarm['severity'], alarm['type-id'], alarm['text'], alarm['sa'], alarm['type']])
-        index = index + 1     
+        index = index + 1
     click.echo(tabulate(current_alarm_info, current_alarm_header, tablefmt="simple"))
     click.echo("")
+
+def show_db_olp_switch_info(db, slot_id, olp_ids):
+    keys = sorted(list(db.keys(f'OLP_SWITCH_INFO|APS-1-{slot_id}-{olp_ids}*')), reverse=True)[:10]
+    for i, key in enumerate(keys):
+        table_name = key.split('|')[0]
+        table_key = key.split('|')[1]
+        datas = get_db_table_fields(db, table_name, table_key)
+        index = int(datas['index'])
+        timestamp = int(datas['time-stamp']) / 1000
+        time = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+        interval = int(datas['interval'])
+        reason = datas['reason']
+        primary_in = float(datas['switching-primary_in'])
+        secondary_in = float(datas['switching-secondary_in'])
+        common_out = float(datas['switching-common_out'])
+        sample_count = int(datas['pointers'])
+        data = [
+            ("Index".ljust(FIELD_WITH) + ": ", index),
+            ("Time".ljust(FIELD_WITH) + ": ", time),
+            ("TimeInterval".ljust(FIELD_WITH) + ": ", f"{interval} ms"),
+            ("Active-path".ljust(FIELD_WITH) + ": ", reason),
+            ("Primary-In(dBm)".ljust(FIELD_WITH) + ": ", primary_in),
+            ("Secondary-In(dBm)".ljust(FIELD_WITH) + ": ", secondary_in),
+            ("Common-Out(dBm)".ljust(FIELD_WITH) + ": ", common_out),
+            ("SampleCnt".ljust(FIELD_WITH) + ": ", sample_count),
+        ]
+        click.echo(tabulate(data, tablefmt="plain"))
+
+        olp_switch_harder = ["TimeIndex(ms)", "Primary-In(dBm)", "Secondary-In(dBm)", "Common-Out(dBm)"]
+        olp_switch_info = []
+        for i in range(-40, 41):
+            state = "before" if i < 0 else "after"
+            primary_in_key = f'{state}-{abs(i)}-primary_in'
+            secondary_in_key = f'{state}-{abs(i)}-secondary_in'
+            common_out_key = f'{state}-{abs(i)}-common_out'
+            primary_in_value = float(datas.get(primary_in_key, primary_in))
+            secondary_in_value = float(datas.get(secondary_in_key, secondary_in))
+            common_out_value = float(datas.get(common_out_key, common_out))
+            olp_switch_info.append(
+                [f"{i:9}", f"{primary_in_value:10.2f}", f"{secondary_in_value:14.2f}", f"{common_out_value:12.2f}"])
+        click.echo(tabulate(olp_switch_info, olp_switch_harder, tablefmt="simple"))
 
 def show_key_value_list_with_module(target_list, dict_kvs):
     section_str = ""
@@ -325,13 +379,13 @@ def show_key_value_list_with_module(target_list, dict_kvs):
             value = dict_kvs[module_name][field_name]
             section_str += field['show_name'].ljust(FIELD_WITH)+ ": " + value + "\n"
     click.echo(section_str)
-   
+
 def run_system_command(command):
     try:
         run_command(command)
     except Exception as e:
         click.echo(e)
-        
+
 def get_time_zone(zone='+0000'):
     PRETTY_TIMEZONE_CHOICES = []
     for tz in pytz.all_timezones:
@@ -348,18 +402,19 @@ def get_time_zone(zone='+0000'):
                 dict_info[k].append(v)
             list_time_zone.append(v)
     return dict_info[zone][0],list_time_zone
-        
+
 def run_slot_cli_comand(slot_id,cmd):
     slot_name = f'117.103.88.{slot_id}'
     port = '22'
     username = 'admin'
-    password = 'YourPaSsWoRd'
+    # TODO password
+    password = 'Admin_123'
 
     command = f'ssh -p {port} {username}@{slot_name}'
     process = pexpect.spawn(command, timeout=10)
     expect_list = ['yes/no','password:',pexpect.EOF,pexpect.TIMEOUT,]
     index = process.expect(expect_list)
-    if index == 0: 
+    if index == 0:
         process.sendline("yes")
         expect_list = ['password:',pexpect.EOF,pexpect.TIMEOUT,]
         index = process.expect(expect_list)
@@ -375,7 +430,7 @@ def run_slot_cli_comand(slot_id,cmd):
         process.interact()
     else:
         print('TIMEOUT : connect to slot {}'.format(slot_id))
-        
+
 def get_chassis_software_version():
     if os.path.exists('/host/aonos_installer/upgradecfg'):
         json_list = json.load(open('/host/aonos_installer/upgradecfg', encoding='utf-8'))
@@ -383,11 +438,11 @@ def get_chassis_software_version():
     else:
         upgrade_version = ''
     return upgrade_version
-    
+
 def get_chassis_serial_number():
     db = get_chassis_state_db()
     return get_db_table_field(db, "CHASSIS", f"CHASSIS-1", 'serial-no')
-    
+
 def is_valid_time(dat,day):
     if not day:
         day = '0:0:0'
@@ -418,7 +473,7 @@ def get_pm_instant(db, table_name, table_key):
 
 def run_OLSS_utils_set(slot_id, table_name, table_key, field,value):
     cmd = f'sudo test_cmd cmd -n {slot_id -1} set {table_name} {table_key} {field}={value}'
-    run_command(cmd, return_cmd=True)
+    return run_command(cmd, return_cmd=True)
 
 def run_OLSS_utils_get(slot_id, table_name, table_key, field):
     cmd = f'sudo test_cmd cmd -n {slot_id -1} get {table_name} {table_key} {field}'

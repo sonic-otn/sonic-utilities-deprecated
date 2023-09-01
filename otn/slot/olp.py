@@ -31,23 +31,7 @@ def config(ctx):
 def switch_info(ctx):
     slot_id = ctx.obj['slot_idx']
     olp_ids = get_module_ids(ctx)
-    
-    for olp_id in olp_ids:
-        outputs = run_OLSS_utils_set(slot_id, 'APS', f'APS-1-{slot_id}-{olp_id}', 'collect-switch-info', f'true')
-        if 'failed' in outputs:
-            click.echo(outputs)
-        time.sleep(2)
-        state_db = get_state_db_by_slot(slot_id)
-        get_keys = sorted(list(state_db.keys(f'OLP_SWITCH_INFO|APS-1-{slot_id}-{olp_ids}*')),reverse=True)[:10]
-        for i,key in enumerate(get_keys):
-            table_name = key.split('|')[0]
-            table_key = key.split('|')[1]
-            # datas = ConnectDb(state_db).get_table_infos(table_name,table_key)[0]
-            # pattern = r'primary_in'
-            # nums = len(re.findall(pattern, str(datas)))
-            # state_list = StructDatas().show_shitch_info()
-            # TablesViews().filter_switch_info_data(datas,state_list,nums,i+1)
-            # TablesViews().filter_switch_info_datas(datas,nums)
+    show_olp_switch_info(slot_id, olp_ids)
 #################################### pm ############################################################
 @olp.group()
 @click.pass_context
@@ -61,10 +45,10 @@ def current(ctx):
     slot_id = ctx.obj['slot_idx']
     olp_ids = get_module_ids(ctx)
     show_olp_pm_current(slot_id, olp_ids, "APS", ctx.obj['pm_type'])
-    
+
 @pm.command()
 @click.pass_context
-@click.argument('bin_idx',type=click.IntRange(1, 96),required=True)
+@click.argument('bin_idx',type=click.IntRange(1, 96),required=True)#TODO dynamic
 def history(ctx, bin_idx):
     slot_id = ctx.obj['slot_idx']
     olp_ids = get_module_ids(ctx)
@@ -81,7 +65,7 @@ def cfg_olp(ctx, module_idx):
 @click.pass_context
 def alarm(ctx):
     pass
-    
+
 @alarm.command("hysteresis")
 @click.argument('hysteresis',type=DynamicFieldFloatRange('alarm_hysteresis'), required=True)
 @click.pass_context
@@ -94,7 +78,7 @@ def alarm_hysteresis(ctx, hysteresis):
 @click.pass_context
 def switch(ctx):
     pass
-    
+
 @switch.command("hysteresis")
 @click.argument('hysteresis',type=DynamicFieldFloatRange('switch_hysteresis'), required=True)
 @click.pass_context
@@ -255,7 +239,7 @@ def forcetoport(ctx, port):
 def workline(ctx, work_line):
     slot_id = ctx.obj['slot_idx']
     olp_ids = get_module_ids(ctx)
-    
+
     for olp_id in olp_ids:
         outputs = run_OLSS_utils_set(slot_id, 'APS', f'APS-1-{slot_id}-{olp_id}', 'active-path', f'work_line.upper()')
         if 'failed' in outputs:
@@ -271,7 +255,7 @@ def hold_off_time(ctx, threshold):
     slot_id = ctx.obj['slot_idx']
     olp_ids = get_module_ids(ctx)
     config_olps(slot_id, olp_ids, 'hold-off-time', threshold)
-        
+
 ################################################################################################
 def config_olp(slot_id, olp_id, field, value):
     table_name = 'APS'
@@ -285,14 +269,14 @@ def config_olp_port(slot_id, olp_id, port, field, value):
 
 def config_olps(slot_id, olp_ids, field, value):
     for olp_id in olp_ids:
-        config_olp(slot_id, olp_id, field,value)         
+        config_olp(slot_id, olp_id, field,value)
         click.echo('Succeeded')
 
 def config_olps_port(slot_id, olp_ids, port, field, value):
     for olp_id in olp_ids:
-        config_olp_port(slot_id, olp_id, port, field,value)         
+        config_olp_port(slot_id, olp_id, port, field,value)
         click.echo('Succeeded')
-            
+
 def show_modules_info(slot_id, module_ids, table_name):
     for module_id in module_ids:
         show_module_info_data(slot_id, module_id, STATE_LIST, table_name)
@@ -313,9 +297,9 @@ def show_olp_port_info(slot_id, module_id, table_name):
         for field in PM_LIST:
             table_key = f"APS-1-{slot_id}-{module_id}_{port}_{field['Field']}:15_pm_current"
             value = get_pm_instant(db, table_name, table_key)
-            section_str += (port+ " " + field['show_name']).ljust(FIELD_WITH)+ ": " + value + "\n"    
+            section_str += (port+ " " + field['show_name']).ljust(FIELD_WITH)+ ": " + value + "\n"
     click.echo(section_str)
-    
+
 def show_modules_config(slot_id, module_ids, table_name):
     for module_id in module_ids:
         show_module_config_data(slot_id, module_id, CONFIG_LIST, table_name)
@@ -333,8 +317,8 @@ def show_olp_port_config(slot_id, module_id, table_name):
                 value = dict_kvs[field_name]
                 section_str += (port+ " " + field['show_name']).ljust(FIELD_WITH)+ ": " + value + "\n"
     click.echo(section_str)
-    
-def show_module_olp_pm_current(slot_id, module_id, pm_list, table_name, pm_type): 
+
+def show_module_olp_pm_current(slot_id, module_id, pm_list, table_name, pm_type):
     pm_header = ['Name','Instant','Avg','Min','Max','Min-time','Max-time','Valid']
     pm_table = []
     db = get_counter_db_by_slot(slot_id)
@@ -351,7 +335,7 @@ def show_olp_pm_current(slot_id, olp_ids, table_name, pm_type):
         show_module_pm_current_head(slot_id, module_id, table_name, pm_type)
         show_module_olp_pm_current(slot_id, module_id, PM_LIST, "APS_PORT", pm_type)
 
-def show_module_olp_pm_history(slot_id, module_id, pm_list, table_name, pm_type, bin_idx): 
+def show_module_olp_pm_history(slot_id, module_id, pm_list, table_name, pm_type, bin_idx):
     pm_header = ['Name','Instant','Avg','Min','Max','Min-time','Max-time','Valid']
     pm_table = []
     db = get_history_db_by_slot(slot_id)
@@ -368,6 +352,15 @@ def show_olps_pm_history(slot_id, module_ids, table_name, pm_type, bin_idx):
     for module_id in module_ids:
         show_module_pm_history_head(slot_id, module_id, table_name, pm_type, bin_idx)
         show_module_olp_pm_history(slot_id, module_id, PM_LIST, "APS_PORT", pm_type, bin_idx)
+
+def show_olp_switch_info(slot_id, olp_ids):
+    for olp_id in olp_ids:
+        outputs = run_OLSS_utils_set(slot_id, 'APS', f'APS-1-{slot_id}-{olp_id}', 'collect-switch-info', f'true')
+        if 'failed' in outputs:
+            click.echo(outputs)
+        time.sleep(2)
+        db = get_state_db_by_slot(slot_id)
+        show_db_olp_switch_info(db, slot_id, olp_ids)
 
 OLP_PORTS = ["LinePrimaryIn", "LinePrimaryOut","LineSecondaryIn", "LineSecondaryOut", "CommonIn", "CommonOutput"]
     
