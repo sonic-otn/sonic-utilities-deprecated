@@ -19,6 +19,7 @@ from otn.chassis import chassis
 from otn.system import aaa
 from otn.system import ip
 from otn.system import syslog
+from otn.system import alarm
 from otn.utils.utils import load_chassis_capability
 
 def add_otn_config_commands(config):
@@ -43,6 +44,7 @@ def add_otn_config_commands(config):
     config.add_command(ip.interface_cfg)
     config.add_command(aaa.aaa_cfg)
     config.add_command(aaa.tacacs_cfg)
+    config.add_command(alarm.clear_alarm)
     config.add_command(syslog.syslog_cfg)
     
     config.add_command(system_config.system)
